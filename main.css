@@ -543,6 +543,12 @@ header {
 
 }
 
+@media(max-width: 1800px) {
+    .profile-picture {
+        display: none;
+    }
+}
+
 @media(max-width: 600px) {
     .about-pagefull {
         width: 100%;
