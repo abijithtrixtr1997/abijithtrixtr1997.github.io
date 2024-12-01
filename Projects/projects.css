@@ -1,0 +1,382 @@
+:root {
+    --base-color: #797c92;
+    --text-color:  #3f4463;
+    --button-color: #616375;
+    --text-color:  #13141e;
+    --gradient-color: linear-gradient(135deg, #272830, #0f2041);
+    --text-hover: #733725;
+    --svg-color: invert(0);
+    --svg-hover: invert(1);
+    --box-shadow: 8px 8px 20px rgb(131, 134, 153, 0.5), 
+                  -8px -8px 20px rgba(131, 134, 153, 0.5);
+    --form-shadow: inset 8px 8px 20px rgba(140, 143, 161, 0.3), 
+                  inset -8px -8px 20px rgba(140, 143, 161, 0.3);
+    --form-background: rgb(121, 124, 146);
+    --project-bg: #182625;
+    --allprojects-bg: #455559;
+    --project-container-bg: #28403D;
+    --project-font: rgb(230, 230, 230, 0.8);
+}
+
+body.darkmode {
+     --base-color: #1b1d30;
+    --text-color:  #9ea2c5a1;
+    --button-color: #3e404e;
+    --gradient-color: linear-gradient(135deg, #c8c0e7, #8362f0);
+    --text-hover: #733725;
+    --svg-color: invert(1);
+    --svg-hover: invert(1);
+    --box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.1),  
+                  -8px -8px 20px rgba(0 , 0, 0, 0.1);
+    --form-shadow: inset 8px 8px 20px rgba(0, 0, 0, 0.1),  
+                  inset -8px -8px 20px rgba(0 , 0, 0, 0.1);
+    --form-background: rgb(43, 44, 56);
+    --project-bg: #767783;
+    --allprojects-bg: #323445;
+    --project-container-bg: #5F616E;
+    --project-font: rgb(223, 220, 230);
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body::-webkit-scrollbar { 
+    display: none;  /* For Chrome, Safari, and Opera */
+}
+
+body {
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+    background-position: fixed;
+    background-color: var(--base-color);
+    font-family: "Oxanium", sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.pagefull {
+    height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#theme-switcher {
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--base-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    cursor: pointer;
+    border: none;
+    box-shadow: var(--box-shadow);
+}
+
+#theme-switcher svg {
+    fill: var(--text-color);
+}
+
+#theme-switcher svg:last-child {
+    display: none;
+}
+
+.darkmode #theme-switcher svg:first-child {
+    display: none;
+}
+
+.darkmode #theme-switcher svg:last-child {
+    display: block;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 30px 100px;
+    
+}
+
+.header-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin: 20px 20px;
+} 
+
+.background-header {
+    width: 100%;
+    display: flex;
+    padding-left: 30px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.navbar {
+    padding: 20px;
+    z-index: 2000;
+    width: auto;
+}
+
+.mainbar {
+    list-style: none;
+    display: flex;
+    gap: 70px;
+    z-index: 1000;
+    padding-left: 0;        /* Removes default padding on the left */
+    margin-left: 0; 
+}
+
+.mainbar li a {
+    text-decoration: none;
+    text-wrap: nowrap;
+    color: var(--text-color);
+    font-weight: bold;
+    transition: color 0.3s ease;
+    font-size: 1.6vw;
+    z-index: 1000;
+    padding: 10px;
+    border-radius: 10%;
+    transform: scale(1);
+}
+
+.mainbar li:hover {
+    box-shadow: var(--box-shadow);
+    transform: scale(1.05);
+}
+
+.sidebar {
+    position: fixed;
+    background-color: var(--text-color);
+    top: 0;
+    right: 0;
+    margin: 0;
+    height: 100vh;
+    width: 300px;
+    display: none;
+    z-index: 2000;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.sidebar li {
+    width: 100%;
+    margin: 30px;
+    list-style: none;
+}
+
+.sidebar li a {
+    width: 100%;
+    font-size: 2.5em;
+    text-decoration: none;
+    color: var(--base-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    transform: scale(1);
+}
+
+.sidebar li a:hover {
+    background-color: #0f2041;
+    color: #13141e;
+    transform: scale(1.05);
+}
+
+.menu-button {
+    display: none;
+}
+
+.mainbar a.active {
+    background-color: var(--base-color);
+    padding: 10px;
+    border-radius: 10%;
+    box-shadow: var(--box-shadow);
+}
+
+.top-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.all-projects {
+    width: 90%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--allprojects-bg);
+    box-shadow: var(--box-shadow);
+    padding: 2em;
+    margin: 5em auto;
+    gap: 2em;
+    border-radius: 10px;
+}
+
+.projects-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--project-container-bg);
+    padding: 3em;
+    margin: 2em;
+}
+
+.project-heading {
+    font-size: 0.7em;
+    padding: 0.7em 0.7em;
+    margin: 0.7em 0.7em;
+    
+}
+
+.project1, .project2, .project3, .project4, .project5, .project6 {
+    flex: 0 0 300px; /* Grow and shrink with a base width of 200px */
+    width: 300px; /* Limit the maximum width */
+    padding: 1em; /* Add padding for inner spacing */
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    background-color: var(--project-bg);
+    transform: translateZ(10px); /* Lift up by 10px from the center */
+    color: var(--project-font);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: add shadow */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow for more depth */
+    transform: scale(1);
+}
+
+.project-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.project1:hover, .project2:hover, .project3:hover, .project4:hover, .project5:hover, .project6:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+}
+
+.project-content img {
+    height: 180px;
+    object-fit: center;
+    background-position: center;
+}
+
+.project-content h2 {
+    height: 4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 10px;
+}
+
+.footer {
+    width: 100%;
+    height: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.social-links {
+    list-style-type: none; /* Remove bullet points */
+    margin: 20px; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    display: flex; /* Display links in a row */
+    justify-content: center;
+    align-items: center;
+    place-self: center;
+    place-content: center;
+    align-self: center;
+    z-index: 1000;
+}
+
+.social-links ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-links li {
+    margin-left: 35px; /* Spacing between icons */
+    z-index: 1000;
+    height: auto;
+    padding: 5px;
+    border-radius: 10%;
+    align-items: center;
+    justify-content: center;    
+}
+
+.social-links img {
+    width: clamp(10px, 2vw, 70px); /* Set image width */
+    height: auto; /* Maintain aspect ratio */
+    color: white;
+    transition: filter 0.3s ease;
+    filter: var(--svg-color);
+    z-index: 1000;
+}
+
+.social-links li:hover {
+    box-shadow: var(--box-shadow);
+    filter: var(--svg-hover);
+    z-index: 1000;
+}
+
+@media(max-width: 1000px) {
+    .hideOnMobile {
+        display: none;
+    }
+    .menu-button {
+        display: block;
+        align-items: center;
+        justify-content: center;
+        align-self: center;
+    }
+
+    .footer {
+        width: 100%;
+        height: auto;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+
+    .smallDisplayRemoval {
+        display: none;
+    }
+
+}
+
+
+
+@media(max-width: 400px) {
+    .sidebar {
+        width: 100%;
+    }
+}
+
