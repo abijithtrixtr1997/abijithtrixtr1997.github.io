@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="renewable.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Inconsolata:wght@200..900&family=Oxanium:wght@200..800&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Oxanium:wght@200..800&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Global Renewable Energy Trends</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script type="module" src="renewable.js" defer></script>
+    <!-- <script src="sortable.js" defer></script> -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js"></script>
+</head>
+<body>
+    <div class="top-container">
+        <video autoplay muted loop id="background-video">
+            <source src="./video/Background_video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        <header class="header">
+            <div class="theme-container">
+                <button id="theme-switcher">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="undefined"><path d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="undefined"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z"/></svg>
+                </button>
+            </div>
+            <div class="header-container">
+                <nav class="navbar">
+                    <ul class="sidebar">
+                        <li onclick="closesidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="undefined"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                        <li><a href="../main.html">HOME</a></li>
+                        <li><a href="../Projects/Projects.html">PROJECTS</a></li>
+                        <li><a href="./gallery/photo.html">PHOTO GALLERY</a></li>
+                    </ul>
+                    <ul class="mainbar">
+                        <li class="hideOnMobile"><a href="../../../main.html">HOME</a></li>
+                        <li class="hideOnMobile"><a class="active" href="../Projects/Projects.html">PROJECTS</a></li>
+                        <li class="hideOnMobile"><a href="./gallery/photo.html">PHOTO GALLERY</a></li>
+                        <li class="menu-button" id="menuIcon" onclick="showsidebar()"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="undefined"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="project-cover">
+            <h1 id="typing-text"></h1>
+        </div>
+    </div>  
+    <div class="intro">
+        <div class="intro-text">
+            <p>
+                Global energy consumption has surged, traditionally relying on non-renewable sources like coal, fossil fuels, and natural gas, which contribute to greenhouse gas emissions and resource depletion. Renewable energy, by contrast, is eco-friendly and sustainable, yet limited by factors like weather and high installation costs. This project explores the relationship between renewable energy production and economic growth (GDP) worldwide. By visualizing global trends in renewable energy consumption and production, we aim to analyze how this shift impacts the economies of different nations and whether renewable growth correlates with economic expansion.
+            </p>
+            <p>
+                Renewable energy is the cornerstone of a sustainable future, offering a vital solution to the pressing challenges of climate change, energy security, and depleting fossil fuels. These energy sources harness natural processes such as sunlight, wind, water, and geothermal heat, providing clean, abundant, and renewable alternatives to traditional carbon-intensive energy. Today, the most prominent renewable energy sources include solar power, which converts sunlight into electricity; wind energy, captured through turbines; hydropower, generated from flowing water; biomass, derived from organic materials; and geothermal energy, which taps into the Earth's internal heat. By embracing these technologies, societies can transition to a greener economy, reduce environmental impact, and ensure a reliable energy supply for generations to come.
+            </p>
+        </div>
+        <div class="energy-types">
+            <div class="type-solar">
+                <h2>Solar Energy</h2>
+                <p>Solar energy harnesses sunlight to generate electricity or heat using technologies like photovoltaic (PV) cells and solar thermal systems. Photovoltaic cells convert sunlight directly into electricity, while solar thermal systems use sunlight to heat fluids, producing steam that drives turbines. Solar energy is a versatile and scalable solution, powering anything from small homes to large industrial facilities. Its abundance and low environmental impact make it one of the most promising renewable energy sources, with advancements in technology continuously improving efficiency and affordability.</p>
+            </div>
+            <div class="type-hydro">
+                <h2>Wind Energy</h2>
+                <p>
+                    Wind energy is generated by converting the kinetic energy of moving air into electricity using wind turbines. These turbines consist of large blades connected to a generator, which spins to produce power as wind passes through. Onshore and offshore wind farms have emerged as major contributors to global electricity production. Wind energy is clean, renewable, and highly efficient in regions with consistent wind flow, making it a key player in reducing greenhouse gas emissions and transitioning to sustainable energy systems.
+                </p>
+            </div>
+            <div class="type-wind">
+                <h2>Hydro Energy</h2>
+                <p>
+                    Hydropower, or hydro energy, utilizes the movement of water—such as rivers or waterfalls—to produce electricity. The most common method involves dams that control water flow to spin turbines, generating power. Hydropower is a reliable and flexible energy source, capable of meeting both base and peak electricity demands. It has been a cornerstone of renewable energy for decades, offering consistent output and minimal carbon emissions. However, environmental considerations like aquatic ecosystem impacts necessitate sustainable management of hydropower projects.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="main-class">
+        <div class="general-main">
+            <div class="first-main">
+                <p>In this analysis I will be primarily focusing on exploring the trends of <b>SOLAR</b>, <b>HYDRO</b>, and <b>WIND</b> energy globally. We will also create a future trend projection and compare it with the latest data available. The analysis will be solely restricted and biased by the source of the data.</p>
+                <p>We will also be finding the correlation between the countries with high percent share and see how the presence of good renewable energy production has helped these countries to grow their economy.</p>
+            </div>
+            <div class="major-facts">
+                <h2>General Analysis</h2>
+                <div class="major-image">
+                    <img src="./images/Major facts.png" alt="A brief cover page for showcasing general trends globally.">
+                </div>
+                <div class="group-text">
+                    <p>The above report provides a subtle general idea about the share of different types of renewable energy sources over the period. It also provides a map that shows the highest contrivutors geographically. There exists a slicer which helps to navigate the report to filter and show visuals reported to single or multiple countries.</p>
+                    <p>As can be seen from the graph, there exits a huge contribution towards their whole energy share by the scandinavian nations Norway, Sweden, and Denmark</p>
+                    <p>The area chart shows the growth of the percentage share of renewable energy share globally. We can see that there has been as steep rise in the percent share starting from the year early 2000s. This shows the interest and seriousness taken by different nations to reduce our carbon footprint as well as to preserve the current resources for the greater good and for the future generations.</p>
+                </div>
+                <div class="major-image">
+                    <img src="./images/General Facts.png" alt="General facts visualization">
+                </div>
+                <div class="group-text">
+                    <p>The image shows the top countries and the lowest countries with average percent renewable energy share over time. It also displays the major energy source and the top contributors by continents by making use of pie chart visuals.</p>
+                    <p>As can be seen from the above visual, ther exists a huge gap between every other renewable energy sources and hydri energy as they have take up more than 75% share of all the resources combined. This can be justified by the huge abundance of water and the invention of hydro energy generators by late 19th century.</p>
+                    <p>We can also see the presence of around 50% average share of countries coming from south American nations. This can be attributed to the prescence of really good solar reception as well as less amount of nations, which helps in increasing the total average as a whole.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="indepth-container">
+            <aside class="left-navbar">
+                <ul>
+                <li><a href="#" data-target="solar-energy">Solar Energy</a></li>
+                <li><a href="#" data-target="wind-energy">Wind Energy</a></li>
+                <li><a href="#" data-target="hydro-energy">Hydro Energy</a></li>
+                </ul>
+            </aside>
+            <div class="types-all">
+                <div id="solar-energy" class="container">
+                    <div class="whole">
+                        <div class="solar-landing">
+                            <div class="major-container">
+                                <h2>Major Facts</h2>
+                            </div>
+                            <div class="visual">
+                                <img src="./images/Solar Landing.png" alt="The report visulaizes the general landing page shocasing the trends and map visual for the solar generation and facts">
+                            </div>
+                            <div class="landing-text">
+                                <p>
+                                    There exists a total of <span class="number-in-text">574.45 TWh</span> solar capapcity installed as of 2019. The countries with the top generation of solar energy includes China, Germany, India, Japan, and United Stares.<br> The report containers a slicer which helps to select the desired country and the year gap to adjust the visual for further analysis.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="facts-solar">
+                            <div class="facts-image">
+                                <img src="images/Solar Facts.png" alt="">
+                            </div>
+                            <div class="solar-facts-text">
+                                <p>
+                                    The image on the left represents major numbers related to the solar energy consumption, generation, and it's average share.
+                                </p>
+                                <p>
+                                    The bar chart shows the yearly average share of solar energy. The table on the right shows the countries with maximum solar generation, as well as countries with the highest capapcity of solar energy resources installed till the year, 2020.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="solar-commercialization">
+                            <div class="image-visual">
+                                <img src="./images/Commercialization.png" alt="Solar energy outburst">
+                            </div>
+                            <div class="commercialization-text">
+                                <p>The use of photovoltaic cells as a commercial product was carried out in the year <em class="solar-year">1989</em>, which resulted in a huge outburst in the generation and usage of solar energy from there on. There exists a percentage increase of more than <em class="solar-year">2000%</em> in the year 1989.</p>
+                                <p>Due to this act, the solar energy usage has been increasing year over year by great margins from there on.</p>
+                            </div>
+                        </div>
+                        <div class="active-solar">
+                            <p>As of 2020 there exists <span style="font-size: 3em;">78</span> active countries contributing towards the solar generation worldwide. Every continent contributes a towards this number.</p>
+                            <div class="active-visual">
+                                <div class="visual">
+                                    <img src="./images/solar final.png" alt="This visual shows the growth of active countries contributing towards the solar energy generation.">
+                                </div>
+                                <div class="active-number">
+                                    <h1 class="active-count"><span class="number">78</span><br>active countries</h1>
+                                </div>
+                            </div>
+                            <div class="group-text">
+                                <p>
+                                    There exits lots of potential for the solar energy industry to grow in the coming years. With high abundance of solar radiation and with correct economic strategies, more countries will be able to implement more solar power plants on a larger scale.
+                                </p>
+                                <p>
+                                    The current progress suggests a forecast of around 4% of world's total energy to be produced using solar resources.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="hydro-energy" class="container">
+                    <div class="whole">
+                        <div class="hydro-landing">
+                            <div class="hydro-introduction">
+                                <div class="hydro-intro-text">
+                                    <p>
+                                        Hydro Energy, with its roots tracing back to ancient civilizations using water wheels, has evolved into one of the most profound and abundant sources for generating renewable energy.
+                                    </p>
+                                    <p>
+                                        The modern era of hydroelectricity began in <span class="number-in-text">1882</span>, with the establishment of the world's first hydroelectric power plant on the Fox River in <span class="location-in-text">📍Appleton, Wisconsin</span>. <br>
+                                        Significant advancements followed in the <span class="number-in-text">1930</span>s, marked by large-scale projects like the construction of the Hoover Dam in the United States, which showcased the potential of hydro energy on an industrial scale.<br>
+                                        The introduction of pumped-storage technology in the <span class="number-in-text">1960</span>s further revolutionized the field, enabling efficient energy storage and load balancing.
+                                    </p>
+                                    <p>
+                                        Over time, countries worldwide have harnessed hydro energy as a sustainable and reliable power source, contributing significantly to the global renewable energy mix.
+                                    </p>
+                                </div>
+                                <div class="map-hydro">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2857.681216018046!2d-88.40938132327918!3d44.25480317107988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8803b7ae367fecbf%3A0xceaa95bbc225adc4!2sAppleton%20Hydroelectric%20Plant!5e0!3m2!1sen!2sde!4v1734459219246!5m2!1sen!2sde" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                            </div>
+                            <div class="first-visual">
+                                <div class="image-visual hydro-report1">
+                                    <img src="./images/Hydro Energy Landing.png" alt="">
+                                </div>
+                                <div class="first-text-hydro">
+                                    <p>
+                                        The report visualises how the year over year percentage growth of hydro energy has changed over period. There exists numberous ups and downs for this source of energy.<br>
+                                        This can be accredited to the dependency of rainfall, the availability of sources, and the never ending climate changes endured by different nations.<br>
+                                        We can also find that, even though there is an increase in the overall percentage of hydro energy share throughout the period, there has been times when the share was much more that what it is today. This could be due to the innovation of new technologies and other sources of energy during the years, which resulted in a decrease in the overall share of hydro energy.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="second-visual">
+                                <div class="image-visual hydro-report2">
+                                    <img src="./images/Hydro Energy Second.png" alt="">
+                                </div>
+                                <div class="second-text-hydro">
+                                    <div class="group-text">
+                                        <p>
+                                            From the above visual, we can see that there exists a huge gap between the average share of hydro energy of South America as compared to that of other continents. This could arise due to the fact that the population and the number of south american countries is lower when compared to other continents, resulting in an increased percentage share. Such a trend has been found in the global renewable energy share as well.
+                                        </p>
+                                        <p>
+                                            Australia, even though a continent has been omitted from this list, as it does not have a significant contribution towards the renewable sources of energy.
+                                        </p>
+                                    </div>
+                                    <div class="other-group">
+                                        <div class="other-text">
+                                            <p>
+                                                As of now, there exists, 70 countries who are active in generating Hydro Energy. This number is less compared to the number of countries active in solar energy. This could be due to varying climate conditions, rainfall, and other economic factors.
+                                            </p>
+                                            <p>
+
+                                            </p>
+                                        </div>
+                                        <div class="active-number-hydro">
+                                            <h1 class="active-count"><span class="number">70</span><br>active countries</h1>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>    
+                            <div class="third-visual">
+                                <div class="group-text">
+                                    <p>
+                                        The final report created using the hydro energy related data is to create forecast graph to determine the growth of it's percent share, generation, and the electricity consumed using them.
+                                    </p>
+                                    <p>
+                                        We can see a steady increase in the generation and the electricty line charts, whereas for the percent share, there exists not too much growth. Rather, the percent share graph follows a steady line indicating that there won't be much increase in the share, due to new resources being developed and cultivated using modern technologies.
+                                    </p>
+                                </div>
+                                <div class="image-visual hydro-report3">
+                                    <img src="./images/Hydro Energy Third.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div id="wind-energy" class="container active">
+                    <div class="whole">
+                        <div class="first-turbine">
+                            <div class="first-wind">
+                                <p>
+                                    Wind Energy, harnessed since ancient times for sailing ships and grinding grain, has become a cornerstone of modern renewable energy systems. The use of windmills for mechanical power dates back to 7th-century Persia, but the transition to electricity generation began in the late 19th century. In <span class="number-in-text">1887</span>, James Blyth built the first wind turbine to generate electricity in Scotland, followed by Charles Brush in the United States in <span class="number-in-text">1888</span>, who designed a larger-scale wind generator.<br>
+                                    The <span class="number-in-text">1980s</span> marked a turning point with the rise of commercial wind farms, particularly in Denmark, solidifying its leadership in wind energy innovation. Recent advancements, such as offshore wind farms and high-efficiency turbine designs, have made wind energy a vital contributor to reducing global carbon emissions and transitioning to sustainable power systems.
+                                </p>
+                                <p>
+                                    The image to the right shows the first wind turbine ever created by it's author James Blyth in 1887.
+                                </p>
+                            </div>
+                            <div class="wind-history-images">
+                                <div class="turbine-image">
+                                    <img src="./images/first wind turbine.png" alt="">
+                                </div>
+                                <div class="james-image">
+                                    <img src="./images/James Blyth.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wind-landing">
+                            <div class="image-visual">
+                                <img src="./images/Wind Energy First.png" alt="The report displays the basic values of the wind energy as of the year 2021">
+                            </div>
+                            <div class="landing-text">
+                                <div class="group-text">
+                                    <p>
+                                        From the start of wind energy Commercialization till date, this energy source has seen tremendous growth in increasing their share. As of 2021, 1860 TWh of wind energy is generated globally, which accumulates towards 2.95% of total global renewable energy share.  
+                                    </p>
+                                    <p>
+                                        The installed wind capacity accumulates to a total of 825 TWh unit energy, which is a huge number and a growing number, which can help us to grow susutainably.
+                                    </p>
+                                </div>
+                                <div class="spike-text">
+                                    <div class="inner-spike">
+                                        <p>
+                                            There exists a massive increase of more than 100k percentile growth in yearly progress from the year 1988 to 1989.
+                                        </p>
+                                        <p>This increase can be accounted to the changes in the technology by removing and installing new and efficient turbines across major countries as well as inby introducing new wind energy fields across the globe.</p>
+                                    </div>
+                                </div>
+                                <div class="spike-image">
+                                    <div class="image-visual">
+                                        <img src="./images/Wind Increase.png" alt="The report containes the increase of wind generation values from the year 1988 to 1989">
+                                    </div>
+                                </div>
+                                <div class="more-text">
+                                    <div class="group-text">
+                                        <p>
+                                            As of the year 2020, the global wind energy has a total generation of 1.86k TWh, and a capapcity of 824.87 TWh, which is almost 170 times than the first year.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+    <div class="gdp-class">
+        <div class="intro-gdp">
+            <div class="gdp-heading">
+                <h1>
+                    GROSS DOMESTIC PRODUCT (GDP)
+                </h1>
+            </div>
+            <div class="gdp-intro-text">
+                <p>
+                    Gross Domestic Product (GDP) is a fundamental metric that quantifies the total economic output of a nation over a specific period. It represents the monetary value of all goods and services produced within a country's borders, providing a comprehensive snapshot of its economic activity. GDP serves as a critical indicator for policymakers, economists, and analysts to assess the economic performance and growth trends of nations.
+                </p>
+                <p>
+                    Primarily, GDP is calculated using three approaches: the production approach (value-added method), the expenditure approach (total spending), and the income approach (earnings and profits). Together, these methods offer insights into the economic dynamics of supply, demand, and income distribution. The metric is usually expressed in nominal terms, reflecting current market prices, or in real terms, adjusted for inflation to capture genuine growth.
+                </p>
+                <p>
+                    GDP is more than a measure of output—it reflects the standard of living, economic stability, and growth potential of a country. By comparing GDP across different time periods or nations, analysts can identify trends, disparities, and opportunities for improvement. For example, tracking the correlation between GDP and renewable energy adoption helps highlight the role of sustainable practices in fostering economic development.
+                </p>
+                <p>
+                    However, GDP has its limitations. It doesn't account for income inequality, environmental degradation, or the quality of life. Complementary measures like the Human Development Index (HDI) or Gross National Happiness (GNH) are often used to address these gaps.
+                </p>
+            </div>
+            <div class="gdp-visual">
+                <div class="world-text">
+                    <p>
+                        As of today, the current world GDP stands at a total of $105.4 trillion USD.
+                    </p>
+                </div>
+                <div class="current-gdp">
+                    <h1>
+                        $105.4 trillion USD
+                    </h1>
+                </div>
+                <div class="image-visual">
+                    <img src="./images/gdp-world .png" alt="">
+                </div>
+                <div class="gdp-bar-text">
+                    <p>
+                        The world GDP has seen a steady rise over the past years. As of the data used for analysis, the GDP stood at a total of $97 trillion USD.
+                    </p>
+                </div>
+                <img src="./images/GDP Countries.png" alt="">
+                <p>
+                    The aove image shows the rise in gdp of global giants during the period taken for the study.
+                </p>
+                <p>
+                    As we can see, USA has had a majority of share towards the global GDP contribution with a total of $21 trillion USD as of 2020. Over the years, the rise has been gradual for these countries.
+                </p>
+                <p>
+                    USA is closely followed by China, Germany, UK, and Japan.
+                </p>
+                <img src="./images/Percentage_Share_GDP.png" alt="">
+                <p>
+                    The image depicts the growth in the percent share of renewable energy contribution of these countries over the years.
+                </p>
+                <div class="correlation-world">
+                    <p>
+                        The values were correlated for different countries and the whole world as a total with GDP. 
+                    </p>
+                    <p>The world renewable energy share showed a correlation of 0.91.</p>
+                </div>
+            </div>
+            <div class="excel-table">
+                <p>
+                    The values achieved upon correlating various energy share metrics with GDP is depicted using the below table.
+                </p>
+                <h2>CORRELATED DATA OUTPUT</h2>
+                <div class="dataTable">
+                    <table id="dataTable" class="display sortable">
+                        <thead>
+                            <tr>
+                                <th>Country</th>
+                                <th>Renewable Energy Correlation</th>
+                                <th>Hydro Energy Correlation</th>
+                                <th>Solar Energy Correlation</th>
+                                <th>Wind Energy Correlation</th>
+                            </tr>
+                        </thead>
+                        <tbody id="data-output">
+                            <!-- Data will be populated dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+                <img src="./images/correlation_classified.png" alt="The above image containes different renewable energy as well whole correlated and the values plotted according to year.">
+                <p>
+                    The above report visualizes the top countries having correlation with different types of renewable sources of energy. 
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="conclusion">
+        <div class="group-text">
+            <p>
+                The analysis and visualizations contributes towards a greater study of the subject and helps us in establishing a positive correlation between the values.
+            </p>
+            <p>
+                There exists countries with high correlation between these two factors.
+            </p>
+            <p>
+                With the correct and improved dataset, we can conduct a more detailed and new study, which can help to learn the subject more.
+            </p>
+            <p>
+                View the code repository.
+            </p>
+            <p>
+                Kaggle
+            </p>
+            <p>
+                PowerBI
+            </p>
+        </div>
+    </div>
+</body>
+</html>
