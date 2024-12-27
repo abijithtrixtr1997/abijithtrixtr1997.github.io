@@ -1,0 +1,485 @@
+[
+  {
+    "Country": "Algeria",
+    "Renewable Energy Correlation": -0.4590352257393155,
+    "Hydro Energy Correlation": -0.47932558216771715,
+    "Solar Energy Correlation": 0.2791797422469946,
+    "Wind Energy Correlation": 0.19111227447976972
+  },
+  {
+    "Country": "Argentina",
+    "Renewable Energy Correlation": 0.486595627564668,
+    "Hydro Energy Correlation": 0.34068108927239005,
+    "Solar Energy Correlation": 0.2729493743817512,
+    "Wind Energy Correlation": 0.31726831581914783
+  },
+  {
+    "Country": "Australia",
+    "Renewable Energy Correlation": 0.41163279134047764,
+    "Hydro Energy Correlation": -0.4105690301237767,
+    "Solar Energy Correlation": 0.574967364744287,
+    "Wind Energy Correlation": 0.6880379134434746
+  },
+  {
+    "Country": "Austria",
+    "Renewable Energy Correlation": 0.49605775902030236,
+    "Hydro Energy Correlation": 0.23100184960364561,
+    "Solar Energy Correlation": 0.5565224610143253,
+    "Wind Energy Correlation": 0.6188163857639689
+  },
+  {
+    "Country": "Azerbaijan",
+    "Renewable Energy Correlation": 0.6073172318216848,
+    "Hydro Energy Correlation": 0.5865805419904049,
+    "Solar Energy Correlation": 0.6180994320469017,
+    "Wind Energy Correlation": 0.6114269000282958
+  },
+  {
+    "Country": "Bangladesh",
+    "Renewable Energy Correlation": -0.35978857296242783,
+    "Hydro Energy Correlation": -0.3844881588804125,
+    "Solar Energy Correlation": 0.5962517355121706,
+    "Wind Energy Correlation": 0.3072814160420767
+  },
+  {
+    "Country": "Belarus",
+    "Renewable Energy Correlation": 0.6836798748019807,
+    "Hydro Energy Correlation": 0.7076008390773296,
+    "Solar Energy Correlation": 0.7014163747418843,
+    "Wind Energy Correlation": 0.711142815208798
+  },
+  {
+    "Country": "Belgium",
+    "Renewable Energy Correlation": 0.7486674242698245,
+    "Hydro Energy Correlation": -0.013106377980985516,
+    "Solar Energy Correlation": 0.44725335481690986,
+    "Wind Energy Correlation": 0.6147410409595528
+  },
+  {
+    "Country": "Brazil",
+    "Renewable Energy Correlation": 0.39030206544940843,
+    "Hydro Energy Correlation": 0.15818021798713222,
+    "Solar Energy Correlation": 0.17582104811668972,
+    "Wind Energy Correlation": 0.45719014731074425
+  },
+  {
+    "Country": "Bulgaria",
+    "Renewable Energy Correlation": 0.6949857461012544,
+    "Hydro Energy Correlation": 0.49967439905917854,
+    "Solar Energy Correlation": 0.6795358080415338,
+    "Wind Energy Correlation": 0.756777091046642
+  },
+  {
+    "Country": "Canada",
+    "Renewable Energy Correlation": 0.2227641244520237,
+    "Hydro Energy Correlation": 0.11647589685565655,
+    "Solar Energy Correlation": 0.5865209206040972,
+    "Wind Energy Correlation": 0.6726326375662707
+  },
+  {
+    "Country": "Chile",
+    "Renewable Energy Correlation": 0.10411639397242677,
+    "Hydro Energy Correlation": -0.265088251108195,
+    "Solar Energy Correlation": 0.3083241288127965,
+    "Wind Energy Correlation": 0.5381818384614171
+  },
+  {
+    "Country": "China",
+    "Renewable Energy Correlation": 0.746375545656265,
+    "Hydro Energy Correlation": 0.5616637311634401,
+    "Solar Energy Correlation": 0.7198284629759428,
+    "Wind Energy Correlation": 0.7928934704650542
+  },
+  {
+    "Country": "Colombia",
+    "Renewable Energy Correlation": 0.4692992033942065,
+    "Hydro Energy Correlation": 0.3952174071051909,
+    "Solar Energy Correlation": 0.2284353752014067,
+    "Wind Energy Correlation": 0.40980040047979616
+  },
+  {
+    "Country": "Croatia",
+    "Renewable Energy Correlation": 0.8714097007557422,
+    "Hydro Energy Correlation": 0.8453618301263806,
+    "Solar Energy Correlation": 0.8042019180157473,
+    "Wind Energy Correlation": 0.806525084524443
+  },
+  {
+    "Country": "Cyprus",
+    "Renewable Energy Correlation": 0.5920658952578273,
+    "Hydro Energy Correlation": "",
+    "Solar Energy Correlation": 0.5702141115376888,
+    "Wind Energy Correlation": 0.6306149043233639
+  },
+  {
+    "Country": "Czechia",
+    "Renewable Energy Correlation": 0.7091545080345266,
+    "Hydro Energy Correlation": 0.4465871160832631,
+    "Solar Energy Correlation": 0.8382894620214347,
+    "Wind Energy Correlation": 0.8844420713290786
+  },
+  {
+    "Country": "Denmark",
+    "Renewable Energy Correlation": 0.8333494296832599,
+    "Hydro Energy Correlation": -0.1495376504546488,
+    "Solar Energy Correlation": 0.5703152787017904,
+    "Wind Energy Correlation": 0.8286488577802317
+  },
+  {
+    "Country": "Ecuador",
+    "Renewable Energy Correlation": 0.6138806888939088,
+    "Hydro Energy Correlation": 0.5941134603542433,
+    "Solar Energy Correlation": 0.4393479570969529,
+    "Wind Energy Correlation": 0.4709359668858794
+  },
+  {
+    "Country": "Estonia",
+    "Renewable Energy Correlation": 0.8568532725738128,
+    "Hydro Energy Correlation": 0.9068270062765493,
+    "Solar Energy Correlation": 0.7191936928151755,
+    "Wind Energy Correlation": 0.9044609162610979
+  },
+  {
+    "Country": "Finland",
+    "Renewable Energy Correlation": 0.5536031564795567,
+    "Hydro Energy Correlation": -0.1897612287594845,
+    "Solar Energy Correlation": 0.4207567193164951,
+    "Wind Energy Correlation": 0.5082872737616282
+  },
+  {
+    "Country": "France",
+    "Renewable Energy Correlation": 0.25650661776174166,
+    "Hydro Energy Correlation": -0.23597014021781737,
+    "Solar Energy Correlation": 0.5261262364880888,
+    "Wind Energy Correlation": 0.5989726041450769
+  },
+  {
+    "Country": "Germany",
+    "Renewable Energy Correlation": 0.7738670431010174,
+    "Hydro Energy Correlation": 0.3580151279675988,
+    "Solar Energy Correlation": 0.6959218088197093,
+    "Wind Energy Correlation": 0.7630479072641099
+  },
+  {
+    "Country": "Greece",
+    "Renewable Energy Correlation": 0.4328530172027491,
+    "Hydro Energy Correlation": 0.04797438692368896,
+    "Solar Energy Correlation": 0.2716704905348079,
+    "Wind Energy Correlation": 0.4973372156403124
+  },
+  {
+    "Country": "Hungary",
+    "Renewable Energy Correlation": 0.6953409728602554,
+    "Hydro Energy Correlation": 0.574099328759184,
+    "Solar Energy Correlation": 0.685232690431377,
+    "Wind Energy Correlation": 0.8639048686738885
+  },
+  {
+    "Country": "Iceland",
+    "Renewable Energy Correlation": 0.5879545460939555,
+    "Hydro Energy Correlation": 0.35911236375762495,
+    "Solar Energy Correlation": "",
+    "Wind Energy Correlation": 0.26788948173460103
+  },
+  {
+    "Country": "India",
+    "Renewable Energy Correlation": -0.19419732426685898,
+    "Hydro Energy Correlation": -0.48620269667098137,
+    "Solar Energy Correlation": 0.6428636071894395,
+    "Wind Energy Correlation": 0.7706316880974088
+  },
+  {
+    "Country": "Indonesia",
+    "Renewable Energy Correlation": 0.26503246899578137,
+    "Hydro Energy Correlation": -0.21746081388467003,
+    "Solar Energy Correlation": 0.49091207183763247,
+    "Wind Energy Correlation": 0.4542210749936926
+  },
+  {
+    "Country": "Iraq",
+    "Renewable Energy Correlation": -0.12386262236735456,
+    "Hydro Energy Correlation": -0.1368009907279733,
+    "Solar Energy Correlation": 0.30518191784630494,
+    "Wind Energy Correlation": ""
+  },
+  {
+    "Country": "Ireland",
+    "Renewable Energy Correlation": 0.7636032038794757,
+    "Hydro Energy Correlation": -0.4576953931900558,
+    "Solar Energy Correlation": 0.4225334992526955,
+    "Wind Energy Correlation": 0.7088891305148364
+  },
+  {
+    "Country": "Israel",
+    "Renewable Energy Correlation": 0.7129524984884975,
+    "Hydro Energy Correlation": 0.31320887600787356,
+    "Solar Energy Correlation": 0.7284962228450179,
+    "Wind Energy Correlation": 0.5184305325693546
+  },
+  {
+    "Country": "Italy",
+    "Renewable Energy Correlation": 0.4287191097581592,
+    "Hydro Energy Correlation": -0.13089638696264766,
+    "Solar Energy Correlation": 0.5283662680736266,
+    "Wind Energy Correlation": 0.6081401668850314
+  },
+  {
+    "Country": "Japan",
+    "Renewable Energy Correlation": 0.09100510898048414,
+    "Hydro Energy Correlation": -0.3082911701184356,
+    "Solar Energy Correlation": 0.3631261239177442,
+    "Wind Energy Correlation": 0.49607860703636325
+  },
+  {
+    "Country": "Kazakhstan",
+    "Renewable Energy Correlation": 0.6062266567720667,
+    "Hydro Energy Correlation": 0.5857398554638318,
+    "Solar Energy Correlation": 0.6260661845721804,
+    "Wind Energy Correlation": 0.6657235852149066
+  },
+  {
+    "Country": "Kuwait",
+    "Renewable Energy Correlation": 0.24154175866165545,
+    "Hydro Energy Correlation": "",
+    "Solar Energy Correlation": 0.2711916746251883,
+    "Wind Energy Correlation": 0.1783336417878238
+  },
+  {
+    "Country": "Latvia",
+    "Renewable Energy Correlation": 0.7984684965485498,
+    "Hydro Energy Correlation": 0.728987506262736,
+    "Solar Energy Correlation": 0.7618444979998907,
+    "Wind Energy Correlation": 0.9130799579855442
+  },
+  {
+    "Country": "Lithuania",
+    "Renewable Energy Correlation": 0.8222176218895973,
+    "Hydro Energy Correlation": 0.8157213967957847,
+    "Solar Energy Correlation": 0.835671897111726,
+    "Wind Energy Correlation": 0.8767957203190563
+  },
+  {
+    "Country": "Luxembourg",
+    "Renewable Energy Correlation": 0.7500067940641317,
+    "Hydro Energy Correlation": 0.1002896226495516,
+    "Solar Energy Correlation": 0.5841929390596077,
+    "Wind Energy Correlation": 0.6081336182796808
+  },
+  {
+    "Country": "Malaysia",
+    "Renewable Energy Correlation": 0.0006956767306733147,
+    "Hydro Energy Correlation": -0.07816236402996853,
+    "Solar Energy Correlation": 0.3115021385882638,
+    "Wind Energy Correlation": ""
+  },
+  {
+    "Country": "Mexico",
+    "Renewable Energy Correlation": -0.12519885231454916,
+    "Hydro Energy Correlation": -0.4139395206920871,
+    "Solar Energy Correlation": 0.3740497497966861,
+    "Wind Energy Correlation": 0.5424552050873244
+  },
+  {
+    "Country": "Morocco",
+    "Renewable Energy Correlation": -0.2014738397163097,
+    "Hydro Energy Correlation": -0.4768379827422217,
+    "Solar Energy Correlation": 0.4615040651286644,
+    "Wind Energy Correlation": 0.572321611554914
+  },
+  {
+    "Country": "Netherlands",
+    "Renewable Energy Correlation": 0.7476872635728891,
+    "Hydro Energy Correlation": 0.5449129109126826,
+    "Solar Energy Correlation": 0.4412298552461719,
+    "Wind Energy Correlation": 0.6859156140868569
+  },
+  {
+    "Country": "New Zealand",
+    "Renewable Energy Correlation": 0.01688263592311931,
+    "Hydro Energy Correlation": -0.21131220215255733,
+    "Solar Energy Correlation": 0.4572773778692337,
+    "Wind Energy Correlation": 0.744558883582692
+  },
+  {
+    "Country": "North Macedonia",
+    "Renewable Energy Correlation": 0.8974697569490593,
+    "Hydro Energy Correlation": 0.8861079497214713,
+    "Solar Energy Correlation": 0.806381785803712,
+    "Wind Energy Correlation": 0.7588293553640872
+  },
+  {
+    "Country": "Norway",
+    "Renewable Energy Correlation": 0.16499402061823518,
+    "Hydro Energy Correlation": 0.13626512578105035,
+    "Solar Energy Correlation": 0.39221979198504875,
+    "Wind Energy Correlation": 0.465100630228658
+  },
+  {
+    "Country": "Oman",
+    "Renewable Energy Correlation": 0.21685271592843797,
+    "Hydro Energy Correlation": "",
+    "Solar Energy Correlation": 0.27734490918733234,
+    "Wind Energy Correlation": 0.14968134994250817
+  },
+  {
+    "Country": "Pakistan",
+    "Renewable Energy Correlation": -0.17878760928901244,
+    "Hydro Energy Correlation": -0.22762557966966332,
+    "Solar Energy Correlation": 0.49310516876890964,
+    "Wind Energy Correlation": 0.34923494070534494
+  },
+  {
+    "Country": "Peru",
+    "Renewable Energy Correlation": 0.24467056057232597,
+    "Hydro Energy Correlation": 0.19750713752389387,
+    "Solar Energy Correlation": 0.32559324865489386,
+    "Wind Energy Correlation": 0.6053030809599462
+  },
+  {
+    "Country": "Philippines",
+    "Renewable Energy Correlation": 0.10645853891007477,
+    "Hydro Energy Correlation": -0.18685214234664133,
+    "Solar Energy Correlation": 0.5205779410566821,
+    "Wind Energy Correlation": 0.5262504877766645
+  },
+  {
+    "Country": "Poland",
+    "Renewable Energy Correlation": 0.7113730398471475,
+    "Hydro Energy Correlation": 0.447827450060963,
+    "Solar Energy Correlation": 0.6635425564575049,
+    "Wind Energy Correlation": 0.8153389139240063
+  },
+  {
+    "Country": "Portugal",
+    "Renewable Energy Correlation": 0.17843930216594642,
+    "Hydro Energy Correlation": -0.4329627053102311,
+    "Solar Energy Correlation": 0.4939890348626897,
+    "Wind Energy Correlation": 0.6890455302241649
+  },
+  {
+    "Country": "Qatar",
+    "Renewable Energy Correlation": 0.4264657585677289,
+    "Hydro Energy Correlation": "",
+    "Solar Energy Correlation": 0.44672093670886653,
+    "Wind Energy Correlation": ""
+  },
+  {
+    "Country": "Romania",
+    "Renewable Energy Correlation": 0.7115515787118886,
+    "Hydro Energy Correlation": 0.6105739845403698,
+    "Solar Energy Correlation": 0.7398797039940257,
+    "Wind Energy Correlation": 0.790403158967165
+  },
+  {
+    "Country": "Saudi Arabia",
+    "Renewable Energy Correlation": 0.46416333564251766,
+    "Hydro Energy Correlation": "",
+    "Solar Energy Correlation": 0.44731140865281876,
+    "Wind Energy Correlation": ""
+  },
+  {
+    "Country": "Singapore",
+    "Renewable Energy Correlation": 0.43971252618258255,
+    "Hydro Energy Correlation": "",
+    "Solar Energy Correlation": 0.4259316020494399,
+    "Wind Energy Correlation": ""
+  },
+  {
+    "Country": "Slovenia",
+    "Renewable Energy Correlation": 0.8729031776442208,
+    "Hydro Energy Correlation": 0.85706152662058,
+    "Solar Energy Correlation": 0.847081193334718,
+    "Wind Energy Correlation": 0.8195940485079055
+  },
+  {
+    "Country": "South Africa",
+    "Renewable Energy Correlation": 0.5222097968653899,
+    "Hydro Energy Correlation": -0.05906050474708513,
+    "Solar Energy Correlation": 0.4311658586876702,
+    "Wind Energy Correlation": 0.40573624438113975
+  },
+  {
+    "Country": "Spain",
+    "Renewable Energy Correlation": 0.27702187590307636,
+    "Hydro Energy Correlation": -0.5005245673893219,
+    "Solar Energy Correlation": 0.6053534873969046,
+    "Wind Energy Correlation": 0.7291769163977048
+  },
+  {
+    "Country": "Sri Lanka",
+    "Renewable Energy Correlation": -0.02615951713451614,
+    "Hydro Energy Correlation": -0.09995380666940941,
+    "Solar Energy Correlation": 0.5425903415425403,
+    "Wind Energy Correlation": 0.6856831369600475
+  },
+  {
+    "Country": "Sweden",
+    "Renewable Energy Correlation": 0.5251308943964856,
+    "Hydro Energy Correlation": 0.16583986257855382,
+    "Solar Energy Correlation": 0.43126456267664853,
+    "Wind Energy Correlation": 0.6642541474538969
+  },
+  {
+    "Country": "Switzerland",
+    "Renewable Energy Correlation": 0.1460535489010612,
+    "Hydro Energy Correlation": 0.0584807098058464,
+    "Solar Energy Correlation": 0.6508646373690986,
+    "Wind Energy Correlation": 0.7369571100683066
+  },
+  {
+    "Country": "Thailand",
+    "Renewable Energy Correlation": -0.12956488532940352,
+    "Hydro Energy Correlation": -0.6093488369297103,
+    "Solar Energy Correlation": 0.49540627933467396,
+    "Wind Energy Correlation": 0.46879531722441653
+  },
+  {
+    "Country": "Trinidad and Tobago",
+    "Renewable Energy Correlation": -0.44806377535057923,
+    "Hydro Energy Correlation": "",
+    "Solar Energy Correlation": 0.5567882308860684,
+    "Wind Energy Correlation": ""
+  },
+  {
+    "Country": "Turkmenistan",
+    "Renewable Energy Correlation": 0.525193647291151,
+    "Hydro Energy Correlation": 0.27102581991054525,
+    "Solar Energy Correlation": 0.7514744304774766,
+    "Wind Energy Correlation": ""
+  },
+  {
+    "Country": "Ukraine",
+    "Renewable Energy Correlation": 0.8461248190840346,
+    "Hydro Energy Correlation": 0.8268581787814232,
+    "Solar Energy Correlation": 0.6781750348953965,
+    "Wind Energy Correlation": 0.6470460891831168
+  },
+  {
+    "Country": "United Arab Emirates",
+    "Renewable Energy Correlation": 0.4630693209379673,
+    "Hydro Energy Correlation": "",
+    "Solar Energy Correlation": 0.5061357887803073,
+    "Wind Energy Correlation": 0.33473564395428684
+  },
+  {
+    "Country": "United Kingdom",
+    "Renewable Energy Correlation": 0.6643614104506353,
+    "Hydro Energy Correlation": 0.39088642083095887,
+    "Solar Energy Correlation": 0.4756003506316388,
+    "Wind Energy Correlation": 0.5761267510589139
+  },
+  {
+    "Country": "United States",
+    "Renewable Energy Correlation": 0.5911868050774084,
+    "Hydro Energy Correlation": -0.2360089685576466,
+    "Solar Energy Correlation": 0.6213342482978165,
+    "Wind Energy Correlation": 0.73877511393774
+  },
+  {
+    "Country": "Uzbekistan",
+    "Renewable Energy Correlation": 0.6255106017943809,
+    "Hydro Energy Correlation": 0.6250659768506422,
+    "Solar Energy Correlation": 0.6241278653516684,
+    "Wind Energy Correlation": 0.568085113492868
+  }
+]
