@@ -1,5 +1,4 @@
-
-let darkMode = localStorage.getItem('darkmode') // Use the same key as in enable/disable functions
+let darkMode = localStorage.getItem('darkmode'); // Use the same key as in enable/disable functions
 const themeSwitch = document.getElementById("theme-switcher");
 
 const enableDarkmode = () => {
@@ -23,31 +22,25 @@ themeSwitch.addEventListener("click", () => {
 
 const menuIcon = document.getElementById('menuIcon');
 const sidebar = document.querySelector(".sidebar");
-
-function showsidebar(){
-    
-    sidebar.style.display = 'flex';
-    menuIcon.style.display = 'none'
-    
-}
+const closeButton = document.querySelector(".close-button a");
 
 function closesidebar(){
-    sidebar.style.display = 'none';
+    sidebar.classList.remove("open");
+    sidebar.classList.add("removed");
     menuIcon.style.display = 'flex'
+    setTimeout(() => {
+        sidebar.classList.add("hidden"); // Hide sidebar completely
+      }, 350);
 }
 
-// menuIcon.addEventListener('click', () => {
-//     sidebar.classList.toggle('active'); // Toggle the sidebar visibility
-//     menuIcon.classList.toggle('hidden'); // Hide the menu icon when the sidebar is active
-// });
+function displaysidebar() {
+    sidebar.classList.add("open");
+    sidebar.classList.remove("hidden");
+    sidebar.classList.remove("removed");
+}
 
-// // Optional: If you want to hide the sidebar when clicking outside of it
-document.addEventListener('click', (e) => {
-    if (!sidebar.contains(e.target) && !menuIcon.contains(e.target) && window.innerWidth < 1000) {
-        sidebar.style.display = 'none'; // Hide the sidebar
-        menuIcon.style.display = 'flex'; // Show the menu icon again
-    }
-});
+menuIcon.addEventListener('click', displaysidebar);
+sidebar.addEventListener('click', closesidebar);
 
 function matchContainerWidth() {
     const rightContainer = document.querySelector('.right-container');
@@ -70,3 +63,28 @@ function matchContainerWidth() {
 
 window.addEventListener('load', matchContainerWidth);
 window.addEventListener('resize', matchContainerWidth);
+
+(function(){
+    emailjs.init("3UO7ivrnDDE_WT_ZY"); // Replace with your EmailJS user ID
+})();
+
+document.getElementById('connectForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    var message = document.getElementById('connect-message').value;
+
+    emailjs.send("service_jgwb1sj", "template_ucjuy2r", {
+        message: message
+    }).then(function(response) {
+        alert('Message sent successfully!');
+    }, function(error) {
+        alert('Failed to send message. Please try again.');
+        console.error('Failed to send message. Error:', error);
+    });
+});
+
+const viewMoreButton = document.getElementById("ViewMoreButton");
+
+viewMoreButton.addEventListener("click", () => {
+  window.location.href = './Projects/Projects.html';
+});
