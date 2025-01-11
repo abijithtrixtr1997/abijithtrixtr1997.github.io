@@ -89,12 +89,16 @@ body.darkmode #theme-switcher:hover {
     height: 3vh;
     width: 3vh;
     margin: auto;
-    fill: var(--base-color);
+    fill: var(--text-color);
     transition: fill 0.3s ease;
 }
 
 #theme-switcher:hover svg {
     fill: var(--active-color);
+}
+
+body.darkmode #theme-switcher svg {
+    fill: var(--text-color);
 }
 
 body.darkmode #theme-switcher:hover svg {
@@ -219,6 +223,16 @@ body.darkmode .mainbar li a:hover {
 }
 
 .navbar li svg {
+    fill: var(--accent-color);
+    padding-right: 3dvw;
+}
+
+.sidebar li svg {
+    fill: var(--text-color);
+    padding-right: 3dvw;
+}
+
+body.darkmode .navbar li svg {
     fill: var(--text-color);
     padding-right: 3dvw;
 }
@@ -573,9 +587,7 @@ body.darkmode .project-container button:hover {
     padding: 0; 
     display: flex; 
     align-items: center;
-    place-self: center;
-    place-content: center;
-    align-self: center;
+    justify-content: flex-end;
 }
 
 .social-links li {
@@ -749,59 +761,16 @@ body.darkmode .connect-form button:hover {
 }
 
 @media(max-width: 600px) {
-    .about-pagefull, .connect-container {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+
+    .about-pagefull {
+        height: auto;
         margin: 0;
         padding: 0;
     }
-    
-    .about-container{
-        height: auto;
-        width: clamp(300px, 90%, 1000px);
-        display: flex;
-        padding: 40px 0;
-        align-items: center;
-        justify-content: center;
-        text-align: center; 
-        margin: 0 auto; /* Center container */
-    }
 
-    .connect-inside {
-        width: clamp(300px, 90%, 1000px);
-    }
-    
-    .right-container {
-        height: 100%;
-        align-items: center;
-        justify-content: center;
-        padding: 0;
-        width: auto;
-        place-content: center;
-        align-items: center;
-        height: 100%;
-        overflow-y: none;
-        scroll-snap-type: none;
-        scrollbar-width: none;
-        box-shadow: none;
-    }
-
-    .about-description,
-    .education-container,
-    .experience-container,
-    .project-container {
-        display: flex;
-        flex-direction: column;
-        margin: 2em 1em;
-        height: 100%;
-        padding: 2em;
-        border-radius: 10px;
-        background-color: var(--base-color);
-        box-shadow: var(--box-shadow);
-        justify-content: center;
+    .project-container button {
+        width: 50%;
+        font-size: 2.5dvw;
     }
 
     .connect-container h3 {
@@ -822,6 +791,10 @@ body.darkmode .connect-form button:hover {
         font-size: 2.5vw; /* Change placeholder font size */
         opacity: 1; /* Make sure the placeholder is not faded */
         font-family: "Incnsolata", monospace;
+    }
+
+    .connect-form button {
+        font-size: 2.5dvw;
     }
 }
 
@@ -864,6 +837,22 @@ body.darkmode .connect-form button:hover {
     
     #theme-switcher:hover svg {
         fill: var(--contrasting-text-color);
+    }
+
+    #theme-switcher {
+        background-color: var(--base-color);
+    }
+
+    #theme-switcher svg {
+        fill: var(--accent-color);
+    }
+
+    body.darkmode #theme-switcher {
+        background-color: var(--base-color);
+    }
+
+    body.darkmode #theme-switcher svg {
+        fill: var(--text-color);
     }
     
     #theme-switcher:focus, 
