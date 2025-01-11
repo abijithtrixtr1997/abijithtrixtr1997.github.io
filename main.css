@@ -1,40 +1,27 @@
 :root {
-    --base-color: #797c92;
-    --text-color:  #3f4463;
-    --button-color: #616375;
-    --text-color:  #13141e;
-    --gradient-color: linear-gradient(135deg, #272830, #0f2041);
-    --text-hover: #733725;
-    --svg-color: invert(0);
-    --svg-hover: invert(1);
-    --box-shadow: 8px 8px 20px rgb(131, 134, 153, 0.5), 
-                  -8px -8px 20px rgba(131, 134, 153, 0.5);
-    --form-shadow: inset 8px 8px 20px rgba(140, 143, 161, 0.3), 
-                  inset -8px -8px 20px rgba(140, 143, 161, 0.3);
-    --form-background: rgb(121, 124, 146);
-    --contrast-color: #000;
-    --accent-color: #f0f0f0;
-    --active-color: #c8c0e7;
-    --contrasting-text-color: #fff;
+    --base-color: #e9f5db;
+    --text-color:  #e9f5db;
+    --gradient-color: linear-gradient(135deg, #718355, #0f2041);
+    --box-shadow: 0 2px 5px rgba(6, 24, 16, 0.6), 
+                  0 -2px 5px rgba(6, 24, 16, 0.6);
+    --inset-shadow: 0 4px 5px rgba(6, 24, 16, 0.6), 
+                     0 -4px 5px rgba(6, 24, 16, 0.6);
+    --accent-color: #718355;
+    --active-color: #cfe1b9;
+    --contrasting-text-color: #97a97c;
+    --placeholder-color: #718355;
 }
 
 body.darkmode {
-     --base-color: #1b1d30;
-    --text-color:  #dbddeca1;
-    --button-color: #3e404e;
-    --gradient-color: linear-gradient(135deg, #c8c0e7, #8362f0);
-    --text-hover: #733725;
-    --svg-color: invert(1);
-    --svg-hover: invert(1);
-    --box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.1),  
-                  -8px -8px 20px rgba(0 , 0, 0, 0.1);
-    --form-shadow: inset 8px 8px 20px rgba(0, 0, 0, 0.1),  
-                  inset -8px -8px 20px rgba(0 , 0, 0, 0.1);
-    --form-background: rgb(43, 44, 56);
-    --contrast-color: #bbbbc1;
-    --accent-color: #323445;
-    --active-color: #c8c0e7;
-    --contrasting-text-color: #000;
+    --base-color: #393646;
+    --text-color:  #F4EEE0;
+    --gradient-color: linear-gradient(135deg, #6D5D6E, #F4EEE0);
+    --box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.1),  
+                  -8px -8px 10px rgba(0 , 0, 0, 0.1);
+    --accent-color: #4F4557;
+    --active-color: #6D5D6E;
+    --contrasting-text-color: #2f3e46;
+    --placeholder-color: #dbddeca1;
 }
 
 html, body {
@@ -80,12 +67,11 @@ body {
     height: 3.2vh;
     width: 3.2vh;
     border-radius: 50%;
-    background-color: var(--active-color);
+    background-color: var(--accent-color);
     display: flex;
     align-items: center;
     cursor: pointer;
     border: none;
-    box-shadow: var(--box-shadow);
     box-sizing: border-box;
     transition: background-color 0.3s ease;
 }
@@ -95,24 +81,24 @@ body {
     background-color: var(--contrasting-text-color);
 }
 
-#theme-switcher.no-hover:hover {
-    background-color: var(--active-color); /* Reset to normal state */
-  }
-
 body.darkmode #theme-switcher:hover {
-    background-color: var(--contrasting-text-color);
+    background-color: var(--base-color);
 }
 
 #theme-switcher svg {
     height: 3vh;
     width: 3vh;
     margin: auto;
-    fill: var(--contrasting-text-color);
+    fill: var(--base-color);
     transition: fill 0.3s ease;
 }
 
 #theme-switcher:hover svg {
     fill: var(--active-color);
+}
+
+body.darkmode #theme-switcher:hover svg {
+    fill: var(--text-color);
 }
 
 #theme-switcher:focus, 
@@ -134,13 +120,6 @@ body.darkmode #theme-switcher:hover {
     -webkit-focus-ring-color: transparent;
   }
 
-  body.darkmode #theme-switcher {
-    background-color: var(--active-color);
-}
-
-body.darkmode #theme-switcher {
-    background-color: var(--active-color);
-  }
   
   #theme-switcher svg:last-child {
     display: none;
@@ -194,25 +173,33 @@ header {
 .mainbar li a {
     text-decoration: none;
     text-wrap: nowrap;
-    color: var(--text-color);
+    color: var(--base-color);
     font-weight: bold;
     transition: color 0.3s ease;
     font-size: 1.5rem;
     z-index: 1000;
     height: 100%;
+    padding: 0.5em;
     border-radius: 10px;
+    transition: background-color 1ms ease, color 1ms ease;
 }
 
-.mainbar li a {
-    padding: 0.5em;
+body.darkmode .mainbar li a {
     color: var(--text-color);
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
+    font-weight: bold;
+    transition: color 0.3s ease;
+    transition: background-color 1ms ease, color 1ms ease;
+}
+
 
 .mainbar li a:hover {
     box-shadow: var(--box-shadow);
-    background-color: rgba(200, 196, 188, 0.5);
     color: var(--base-color);
+}
+
+body.darkmode .mainbar li a:hover {
+    box-shadow: var(--box-shadow);
+    background-color: var(--active-color);
 }
 
 .sidebar {
@@ -310,16 +297,28 @@ header {
   .mainbar a.active {
     background-color: var(--active-color);
     border-radius: 10px;
-    color: var(--base-color);
-    box-shadow: var(--box-shadow);
+    color: var(--placeholder-color);
   }
   
   .mainbar a.active:hover {
     background-color: var(--active-color);
     border-radius: 10px;
-    color: var(--base-color);
-    box-shadow: var(--box-shadow);
-  } */
+    color: var(--placeholder-color);
+    box-shadow: none;
+  }
+
+  body.darkmode .mainbar a.active {
+    background-color: var(--active-color);
+    border-radius: 10px;
+    color: var(--text-color);
+  }
+  
+  body.darkmode  .mainbar a.active:hover {
+    background-color: var(--active-color);
+    border-radius: 10px;
+    color: var(--text-color);
+    box-shadow: none;
+  }
 
 .top-container {
     position: relative;
@@ -340,7 +339,7 @@ header {
     top: 30px;
     right: 250px;
     padding: 20px;
-    box-shadow: var(--box-shadow);
+    box-shadow: var(--inset-shadow);
 }
 
 .profile-picture img{
@@ -348,7 +347,10 @@ header {
     height: 100%;
     object-fit: cover;
     border-radius: 10%;
-    box-shadow: var(--box-shadow);
+}
+
+body.darkmode .profile-picture {
+    filter: brightness(40%) contrast(90%);
 }
 
 .total-top-text {
@@ -422,7 +424,6 @@ header {
     height: 80vh;
     width: clamp(400px, 90%, 1000px);
     display: flex;
-    
     padding: 40px 20px;
     align-items: center;
     justify-content: center;
@@ -430,9 +431,13 @@ header {
     margin: 0 auto; /* Center container */
 }
 
+body.darkmode .right-container {
+    background-color: var(--accent-color);
+}
+
 .right-container {
     height: 100%;
-    background-color: var(--accent-color);
+    background-color: var(--contrasting-text-color);
     padding: 20px 20px;
     width: clamp(60vw, 90vw ,900px);
     border-radius: 15px;
@@ -441,7 +446,7 @@ header {
     overflow-y: auto;
     scroll-snap-type: y mandatory;
     scrollbar-width: none;
-    box-shadow: var(--box-shadow);
+    box-shadow: var(--inset-shadow)
 }
 
 .right-container::-webkit-scrollbar {
@@ -525,7 +530,7 @@ header {
     margin-top: 1vh;
     padding: 1vh 1vw;
     font-size: 2vw;
-    background-color: var(--contrast-color);
+    background-color: var(--accent-color);
     color: var(--base-color);
     border: none;
     box-shadow: var(--box-shadow);
@@ -535,9 +540,21 @@ header {
     font-family: "Bebas Neue", sans-serif;
 }
 
+body.darkmode .project-container button {
+    background-color: var(--base-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s ease;
+}
+
+body.darkmode .project-container button:hover {
+    background-color: var(--active-color);
+    color: var(--base-color);
+    transition: background-color 0.3s, color 0.3s ease;
+}
+
 .project-container button:hover {
-    background-color: var(--text-color);
-    color: var(--accent-color);
+    background-color: var(--base-color);
+    color: var(--active-color);
 }
 
 .footer {
@@ -545,7 +562,8 @@ header {
     height: auto;
     display: inline-flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
+    background-color: var(--accent-color);
 }
 
 .social-links {
@@ -569,10 +587,14 @@ header {
 }
 
 .social-links svg {
-    width: 3.5vw;
+    width: 2vw;
     height: auto;
-    fill: var(--contrast-color);
+    fill: var(--base-color);
     transition: filter 0.001s ease;
+}
+
+body.darkmode .social-links svg {
+    fill: var(--text-color);
 }
 
 .social-links li:hover svg{
@@ -580,15 +602,27 @@ header {
 }
 
 .connect-inside {
-    place-content: center;
+    display: flex;
+    width: clamp(300px, 90%, 1000px);
+    align-items: center;
+    justify-content: center;
+}
+
+body.darkmode .connect-inner-inside {
+    background-color: var(--accent-color);
+}
+
+.connect-inner-inside {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     padding: 2vh;
     justify-content: center;
-    background-color: var(--accent-color);
+    background-color: var(--contrasting-text-color);
     border-radius: 10px;
-    box-shadow: var(--box-shadow);
-    grid-column: 2;
+    box-shadow: var(--inset-shadow);
     text-align: center;
+    width: clamp(300px, 90%, 1000px);
 }
 
 .connect-container h3 {
@@ -600,7 +634,8 @@ header {
 .connect-form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    align-items: center;
+    width: 100%;
 }
 
 .connect-form label {
@@ -609,23 +644,25 @@ header {
 }
 
 .connect-form input[type="text"] {
-    padding: 10px;
+    margin-top: 1vh;
+    padding: 3vh;
+    width: 80%;
     color: var(--text-color);
-    font-size: 1.5vw;
+    font-size: 2vw;
     border: var(--base-color);
-    box-shadow: var(--form-shadow);
     outline: none;
     border-radius: 2%;
     transition: border-color 0.3s;
-    background-color: var(--form-background);
+    background-color: var(--active-color);
     height: 40px;
 }
 
 .connect-form button {
     margin-top: 1vh;
+    width: 20%;
     padding: 1vh 1vw;
     font-size: 2vw;
-    background-color: var(--contrast-color);
+    background-color: var(--accent-color);
     color: var(--base-color);
     border: none;
     box-shadow: var(--box-shadow);
@@ -634,16 +671,29 @@ header {
     transition: background-color 0.3s, color 0.3s ease;
     font-family: "Bebas Neue", sans-serif;
 }
+
+body.darkmode .connect-form button {
+    background-color: var(--base-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s ease;
+}
+
 .connect-form input[type="text"]::placeholder {
-    color: var(--text-color); /* Change placeholder text color */
+    color: var(--placeholder-color);
     font-family: "Bebas Neue", sans-serif;
-    font-size: 1.5vw;
+    font-size: 2vw;
 }
 
 .connect-form button:hover {
-    background-color: var(--text-color);
+    background-color: var(--base-color);
     color: var(--base-color);
 }
+
+body.darkmode .connect-form button:hover {
+    background-color: var(--active-color);
+    color: var(--base-color);
+}
+
 
 
 @media(max-width: 1000px) {
@@ -677,6 +727,12 @@ header {
 
     .smallDisplayRemoval {
         display: none;
+    }
+
+    .social-links svg {
+        width: 3.5vw;
+        fill: var(--base-color);
+        transition: filter 0.001s ease;
     }
 
     
