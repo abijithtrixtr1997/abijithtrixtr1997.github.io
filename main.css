@@ -456,7 +456,7 @@ body.darkmode .right-container {
     width: clamp(60vw, 90vw ,900px);
     border-radius: 15px;
     place-content: center;
-    align-items: center;
+    align-items: stretch;
     overflow-y: auto;
     scroll-snap-type: y mandatory;
     scrollbar-width: none;
@@ -465,6 +465,14 @@ body.darkmode .right-container {
 
 .right-container::-webkit-scrollbar {
     display: none; 
+}
+
+.right-container p {
+    font-size: clamp(12px, 2vw, 20px);
+    line-height: 1.5;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    text-align: left;
 }
 
 .about-description,
@@ -481,6 +489,8 @@ body.darkmode .right-container {
     justify-content: center;
 }
 
+
+
 .about-description {
     display: flex;
     flex-direction: column;
@@ -488,7 +498,6 @@ body.darkmode .right-container {
 }
 
 .about-description p {
-    font-size: clamp(12px, 2vw, 30px);
     line-height: 1.5;
     color: var(--text-color);
     margin-bottom: 20px;
@@ -516,25 +525,25 @@ body.darkmode .right-container {
 }
 
 .education-heading h1, .experience-container h1, .project-container h1 {
-    font-size: clamp(35px, 4vw, 60px);
+    font-size: clamp(35px, 4vw, 45px);
     color: var(--text-color);
 }
 
 .Masters h2, .Bachelors h2, .experience-container h2 {
-    font-size: clamp(20px, 2vw, 50px);
+    font-size: clamp(20px, 2.5vw, 32px);
     text-align: left;
     color: var(--text-color); 
 }
 
 .Masters h3, .Bachelors h3 { 
-    font-size: clamp(15px, 1.7vw, 40px);
+    font-size: clamp(15px, 2.1vw, 25px);
      text-align: left;
      color: var(--text-color); 
      margin: 5px 0; 
 }
 
 .Masters p, .Bachelors p, .experience-container p, .project-container p {
-    font-size: clamp(12px, 1.2vw, 25px);
+    font-size: clamp(12px, 2vw, 18px);
     line-height: 1.5;
     text-align: left;
     color: var(--text-color);
