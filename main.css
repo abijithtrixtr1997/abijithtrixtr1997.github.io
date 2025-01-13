@@ -825,15 +825,15 @@ body.darkmode .connect-form button:hover {
     
     #theme-switcher:hover,
     #theme-switcher:active {
-        background-color: var(--active-color);
+        background-color: var(--base-color);
     }
     
     #theme-switcher.no-hover:hover {
-        background-color: var(--active-color); /* Reset to normal state */
+        background-color: var(--base-color); /* Reset to normal state */
       }
     
     body.darkmode #theme-switcher:hover {
-        background-color: var(--active-color);
+        background-color: var(--base-color);
     }
     
     #theme-switcher svg {
