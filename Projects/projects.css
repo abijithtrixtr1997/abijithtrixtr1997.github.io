@@ -479,6 +479,10 @@ body.darkmode .social-links svg {
         align-self: center;
     }
 
+   .header {
+    background-color: var(--base-color);
+    }
+
     .footer {
         width: 100%;
         height: auto;
@@ -501,4 +505,77 @@ body.darkmode .social-links svg {
         width: 100%;
     }
 }
+
+@media (hover: none) {
+    
+    
+    #theme-switcher {
+        height: 3.2vh;
+        width: 3.2vh;
+        border-radius: 50%;
+        background-color: var(--base-color);
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        border: none;
+        box-sizing: border-box;
+        transition: background-color 0.3s ease;
+    }
+    
+    #theme-switcher:hover,
+    #theme-switcher:active {
+        background-color: var(--base-color);
+    }
+    
+    body.darkmode #theme-switcher:hover {
+        background-color: var(--base-color);
+    }
+    
+    #theme-switcher svg {
+        height: 3vh;
+        width: 3vh;
+        margin: auto;
+        fill: var(--accent-color);
+        transition: fill 0.3s ease;
+    }
+    
+    #theme-switcher:hover svg {
+        fill: var(--accent-color);
+    }
+    
+    body.darkmode #theme-switcher svg {
+        fill: var(--text-color);
+    }
+    
+    body.darkmode #theme-switcher:hover svg {
+        fill: var(--text-color);
+    }
+    
+    #theme-switcher:focus, 
+    #theme-switcher:focus-visible, 
+    #theme-switcher:active {
+      outline: none;
+    }
+    
+    #theme-switcher {
+        pointer-events: auto;
+        user-select: none;
+        outline: none;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-focus-ring-color: transparent;
+      }
+    
+      
+      #theme-switcher svg:last-child {
+        display: none;
+      }
+      
+      body.darkmode #theme-switcher svg:first-child {
+        display: none;
+      }
+      
+      body.darkmode #theme-switcher svg:last-child {
+        display: block;
+      }
+  }
 
