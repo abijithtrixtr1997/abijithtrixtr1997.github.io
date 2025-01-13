@@ -822,16 +822,20 @@ body.darkmode .connect-form button:hover {
 }
 
 @media (hover: none) {
-    
+
+    #theme-switcher {
+        background-color: var(--base-color);
+    }
+
     #theme-switcher:hover,
     #theme-switcher:active {
         background-color: var(--base-color);
     }
-    
-    #theme-switcher.no-hover:hover {
-        background-color: var(--base-color); /* Reset to normal state */
-      }
-    
+
+    body.darkmode #theme-switcher {
+        background-color: var(--base-color);
+    }
+
     body.darkmode #theme-switcher:hover {
         background-color: var(--base-color);
     }
@@ -841,26 +845,18 @@ body.darkmode .connect-form button:hover {
         width: 3vh;
         margin: auto;
         fill: var(--contrasting-text-color);
-        transition: fill 0.3s ease;
+        transition: none;
+    }
+
+    body.darkmode #theme-switcher svg {
+        fill: var(--text-color);
     }
     
     #theme-switcher:hover svg {
         fill: var(--contrasting-text-color);
     }
 
-    #theme-switcher {
-        background-color: var(--base-color);
-    }
-
-    #theme-switcher svg {
-        fill: var(--accent-color);
-    }
-
-    body.darkmode #theme-switcher {
-        background-color: var(--base-color);
-    }
-
-    body.darkmode #theme-switcher svg {
+    body.darkmode #theme-switcher:hover svg {
         fill: var(--text-color);
     }
     
