@@ -111,34 +111,33 @@ const closeButton = document.querySelector(".close-button a");
 function closesidebar(){
     sidebar.classList.remove("open");
     sidebar.classList.add("removed");
-    menuIcon.style.display = 'flex'
     setTimeout(() => {
-        sidebar.classList.add("hidden"); // Hide sidebar completely
+        sidebar.classList.remove("removed");
+        sidebar.style.display = "none";
       }, 350);
 }
 
 function displaysidebar() {
-    menuIcon.style.display = 'none';
+    sidebar.style.display = "flex";
     sidebar.classList.add("open");
-    sidebar.classList.remove("hidden");
-    sidebar.classList.remove("removed");
 }
 
 menuIcon.addEventListener('click', displaysidebar);
 sidebar.addEventListener('click', closesidebar);
 
-// menuIcon.addEventListener('click', () => {
-//     sidebar.classList.toggle('active'); // Toggle the sidebar visibility
-//     menuIcon.classList.toggle('hidden'); // Hide the menu icon when the sidebar is active
-// });
 
 // // Optional: If you want to hide the sidebar when clicking outside of it
 document.addEventListener('click', (e) => {
-    if (!sidebar.contains(e.target) && !menuIcon.contains(e.target) && window.innerWidth < 1000) {
-        sidebar.style.display = 'none'; // Hide the sidebar
-        menuIcon.style.display = 'flex'; // Show the menu icon again
+    if (
+        sidebar.classList.contains('open') && // Check if sidebar has the 'open' class
+        !sidebar.contains(e.target) &&
+        !menuIcon.contains(e.target) &&
+        window.innerWidth < 1000
+    ) {
+        sidebar.classList.remove('open');
     }
 });
+
 
 const elements = document.querySelectorAll('.type-solar, .type-hydro, .type-wind');
 
