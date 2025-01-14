@@ -53,49 +53,33 @@ const closeButton = document.querySelector(".close-button a");
 function closesidebar(){
     sidebar.classList.remove("open");
     sidebar.classList.add("removed");
-    menuIcon.style.display = 'flex'
     setTimeout(() => {
-        sidebar.classList.add("hidden"); // Hide sidebar completely
+        sidebar.classList.remove("removed");
+        sidebar.style.display = "none";
       }, 350);
 }
 
 function displaysidebar() {
+    sidebar.style.display = "flex";
     sidebar.classList.add("open");
-    sidebar.classList.remove("hidden");
-    sidebar.classList.remove("removed");
 }
 
 menuIcon.addEventListener('click', displaysidebar);
 sidebar.addEventListener('click', closesidebar);
 
+
+// // Optional: If you want to hide the sidebar when clicking outside of it
 document.addEventListener('click', (e) => {
-    if (!sidebar.contains(e.target) && !menuIcon.contains(e.target) && window.innerWidth < 1000) {
-        sidebar.style.display = 'none'; // Hide the sidebar
-        menuIcon.style.display = 'flex'; // Show the menu icon again
+    if (
+        sidebar.classList.contains('open') && // Check if sidebar has the 'open' class
+        !sidebar.contains(e.target) &&
+        !menuIcon.contains(e.target) &&
+        window.innerWidth < 1000
+    ) {
+        sidebar.classList.remove('open');
     }
 });
 
-function matchContainerWidth() {
-    const rightContainer = document.querySelector('.right-container');
-    const connectContainer = document.querySelector('.connect-container');
-
-    if (rightContainer && connectContainer) {
-        const computedStyle = window.getComputedStyle(rightContainer);
-        
-        // Calculate the total width excluding padding and margins
-        const rightContainerWidth = rightContainer.clientWidth 
-                                    - parseFloat(computedStyle.paddingLeft) 
-                                    - parseFloat(computedStyle.paddingRight)
-                                    - parseFloat(computedStyle.marginLeft) 
-                                    - parseFloat(computedStyle.marginRight);
-        
-        // Set the width of the connect container to match
-        connectContainer.style.width = rightContainerWidth + 'px';
-    }
-}
-
-window.addEventListener('load', matchContainerWidth);
-window.addEventListener('resize', matchContainerWidth);
 
 
 
