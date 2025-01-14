@@ -106,15 +106,22 @@ function convertJSONToTable(jsonData) {
 
 const menuIcon = document.getElementById('menuIcon');
 const sidebar = document.querySelector(".sidebar");
+const closeButton = document.querySelector(".close-button a");
 
 function closesidebar(){
-    sidebar.style.display = 'none';
+    sidebar.classList.remove("open");
+    sidebar.classList.add("removed");
     menuIcon.style.display = 'flex'
+    setTimeout(() => {
+        sidebar.classList.add("hidden"); // Hide sidebar completely
+      }, 350);
 }
 
 function displaysidebar() {
-    sidebar.style.display = 'flex';
     menuIcon.style.display = 'none';
+    sidebar.classList.add("open");
+    sidebar.classList.remove("hidden");
+    sidebar.classList.remove("removed");
 }
 
 menuIcon.addEventListener('click', displaysidebar);
@@ -157,4 +164,40 @@ window.addEventListener('scroll', function () {
         }
     });
 });
+
+window.onload = () => {
+    const path = document.querySelector('.growth-line path');
+    const pathLength = path.getTotalLength();
+    
+    path.style.strokeDasharray = pathLength;
+    path.style.strokeDashoffset = pathLength;
+
+    console.log(pathLength);
+    
+    // Now apply the animations
+  };
+
+  const pathObserver = new IntersectionObserver((entries, pathObserver) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const path = entry.target.querySelector('.growth-line path');
+        const polygon = entry.target.querySelector('.growth-line polygon');
+  
+        // Trigger the path animation
+        path.style.animation = 'drawPath 2s ease forwards';
+  
+        // Trigger the arrowhead animation after the path animation completes
+        polygon.style.animation = 'showArrowHead 1.5s ease 2s forwards';
+  
+        pathObserver.unobserve(entry.target); // Stop observing once animation is triggered
+      }
+    });
+  }, {
+    threshold: 0.5 // Trigger the animation when 50% of the container is in view
+  });
+  
+  // Start observing the container
+  const arrowContainer = document.querySelector('.arrow-container');
+  pathObserver.observe(arrowContainer);
+
 
