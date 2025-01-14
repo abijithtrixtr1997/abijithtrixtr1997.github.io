@@ -1,4 +1,6 @@
-let darkMode = localStorage.getItem('darkmode'); // Use the same key as in enable/disable functions
+let darkMode = localStorage.getItem('darkmode'); 
+
+
 const themeSwitch = document.getElementById("theme-switcher");
 
 const enableDarkmode = () => {
@@ -12,7 +14,12 @@ const disableDarkmode = () => {
 }
 
 // Check if dark mode is active on initial load
-if (darkMode === "active") enableDarkmode();
+if (darkMode === "active") {
+    enableDarkmode();
+    console.log("active")
+} else {
+    console.log("inactive")
+}
 
 // Event listener for the toggle switch
 themeSwitch.addEventListener("click", () => {
@@ -27,42 +34,32 @@ const closeButton = document.querySelector(".close-button a");
 function closesidebar(){
     sidebar.classList.remove("open");
     sidebar.classList.add("removed");
-    menuIcon.style.display = 'flex'
     setTimeout(() => {
-        sidebar.classList.add("hidden"); // Hide sidebar completely
+        sidebar.classList.remove("removed");
+        sidebar.style.display = "none";
       }, 350);
 }
 
 function displaysidebar() {
+    sidebar.style.display = "flex";
     sidebar.classList.add("open");
-    sidebar.classList.remove("hidden");
-    sidebar.classList.remove("removed");
 }
 
 menuIcon.addEventListener('click', displaysidebar);
 sidebar.addEventListener('click', closesidebar);
 
-function matchContainerWidth() {
-    const rightContainer = document.querySelector('.right-container');
-    const connectContainer = document.querySelector('.connect-container');
 
-    if (rightContainer && connectContainer) {
-        const computedStyle = window.getComputedStyle(rightContainer);
-        
-        // Calculate the total width excluding padding and margins
-        const rightContainerWidth = rightContainer.clientWidth 
-                                    - parseFloat(computedStyle.paddingLeft) 
-                                    - parseFloat(computedStyle.paddingRight)
-                                    - parseFloat(computedStyle.marginLeft) 
-                                    - parseFloat(computedStyle.marginRight);
-        
-        // Set the width of the connect container to match
-        connectContainer.style.width = rightContainerWidth + 'px';
+// // Optional: If you want to hide the sidebar when clicking outside of it
+document.addEventListener('click', (e) => {
+    if (
+        sidebar.classList.contains('open') && // Check if sidebar has the 'open' class
+        !sidebar.contains(e.target) &&
+        !menuIcon.contains(e.target) &&
+        window.innerWidth < 1000
+    ) {
+        sidebar.classList.remove('open');
     }
-}
-
-window.addEventListener('load', matchContainerWidth);
-window.addEventListener('resize', matchContainerWidth);
+});
 
 (function(){
     emailjs.init("3UO7ivrnDDE_WT_ZY"); // Replace with your EmailJS user ID
