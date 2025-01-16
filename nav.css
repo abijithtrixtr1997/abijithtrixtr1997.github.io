@@ -50,6 +50,17 @@ body.darkmode #theme-switcher:hover svg {
   outline: none;
 }
 
+  a:hover,
+  button:hover,
+  input:hover,
+  select:hover,
+  textarea:hover,
+  svg:hover{
+    background-color: inherit; /* Reset background color */
+    color: inherit; /* Reset text color */
+    cursor: default; /* Reset cursor */
+  }
+
 #theme-switcher.no-hover:hover {
     background-color: var(--active-color); /* Reset to normal state */
     fill: var(--contrasting-text-color);
