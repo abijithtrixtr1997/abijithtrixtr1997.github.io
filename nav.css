@@ -332,6 +332,11 @@ body.darkmode .navbar li svg {
     body.darkmode #theme-switcher:hover {
         background-color: var(--base-color);
     }
+
+      a, button, input, select, textarea {
+  outline: none; /* Remove the blue outline */
+  -webkit-tap-highlight-color: transparent; /* Disable tap highlight on mobile devices */
+}
     
     #theme-switcher svg {
         height: 3vh;
