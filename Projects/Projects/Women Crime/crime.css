@@ -1,0 +1,118 @@
+:root {
+    --base-color: #F9F6EE;
+    --accent-color: #640404;
+    --active0color: #CCC;
+    --contrasting-text-color: #fff;
+    --text-color: #A07272;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+
+body {
+    background-color: var(--base-color);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.top-container {
+    height: 100dvh;
+    width: 100dvw;
+    background: linear-gradient(180deg, var(--accent-color), var(--base-color));
+    mask-image: linear-gradient(180deg, black, 0.01);
+    -webkit-mask-image: linear-gradient(90deg, black, 0.01);
+}
+
+.inner-top {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    place-items: center;
+    height: 100dvh;
+    width: 100dvw;
+}
+
+.main-heading {
+    height: 50%;
+    padding: 1rem 1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.main-heading h1 {
+    width: 100%;
+    font-size: 3rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 1rem;
+}
+
+.main-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ .main-image svg {
+    display: none;
+}
+
+.inner-image {
+    width: 100%;
+    height: 50%;
+    padding-right: 10dvw;
+    animation: fillBlood 5s forwards;
+    mask-image: url(./svg/woman-symbol-svgrepo-com.svg);
+    mask-repeat: no-repeat;
+    mask-size: calc(50%);
+    mask-position: calc(10% - 2rem) center;
+
+}
+
+/* Keyframes to animate the blood fill */
+@keyframes fillBlood {
+    0% {
+        transform: scale(0); /* Combine skew and scale in the initial state */
+        opacity: 0; /* Start with invisible */
+        background-image: url(./images/blood-aesthetic-oxvmt4opdc4fl2ap.jpg);
+    }
+    50% {
+        background-image: url(./images/blood-aesthetic-oxvmt4opdc4fl2ap.jpg);
+        background-position: center;
+        transform: scale(1); /* Keep skew at 10deg */
+        opacity: 0.7; /* Fade in as it grows */
+    }
+    100% {
+        fill: #640404; /* Final blood color */
+        background-image: url(./images/blood-aesthetic-oxvmt4opdc4fl2ap.jpg);
+        transform:scale(1); /* Final state with skew still at 10deg */
+        background-position: center;
+        opacity: 1; /* Fully visible */
+    }
+}
+
+.part-one {
+    height: 100dvh;
+    width: 90%;
+    margin: auto auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: grey;
+    padding: 1rem 1rem;
+    flex-direction: column;
+}
