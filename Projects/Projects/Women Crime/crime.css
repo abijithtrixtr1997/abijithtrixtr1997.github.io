@@ -11,8 +11,6 @@
     margin: 0;
 }
 
-
-
 body {
     background-color: var(--base-color);
     background-repeat: no-repeat;
@@ -21,22 +19,37 @@ body {
     padding: 0;
     margin: 0;
     overflow-x: hidden;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .top-container {
     height: 100dvh;
     width: 100dvw;
-    background: linear-gradient(180deg, var(--accent-color), var(--base-color));
-    mask-image: linear-gradient(180deg, black, 0.01);
-    -webkit-mask-image: linear-gradient(90deg, black, 0.01);
+    
 }
 
 .inner-top {
     display: grid;
-    grid-template-columns: 3fr 1fr;
     place-items: center;
     height: 100dvh;
     width: 100dvw;
+    position: relative;
+    overflow: hidden;
+}
+
+.inner-top::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url(./images/timon-studler-S4yb515qKX4-unsplash.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    /* Apply filter only to background */
+    filter: grayscale(90%) opacity(0.7);
+    
+    z-index: -1; /* Place behind content */
 }
 
 .main-heading {
@@ -46,7 +59,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    
 }
 
 .main-heading h1 {
@@ -57,9 +69,13 @@ body {
     justify-content: center;
     align-items: center;
     padding: 1rem 1rem;
+    text-transform: uppercase;
+    color: #640404;
+    font-weight: 900;
+    font-size: 3.5rem;
 }
 
-.main-image {
+/* .main-image {
     width: 100%;
     height: 100%;
     display: flex;
@@ -80,30 +96,30 @@ body {
     mask-repeat: no-repeat;
     mask-size: calc(50%);
     mask-position: calc(10% - 2rem) center;
+    display: none;
 
-}
+} */
 
-/* Keyframes to animate the blood fill */
-@keyframes fillBlood {
+/* @keyframes fillBlood {
     0% {
-        transform: scale(0); /* Combine skew and scale in the initial state */
-        opacity: 0; /* Start with invisible */
+        transform: scale(0);
+        opacity: 0; 
         background-image: url(./images/blood-aesthetic-oxvmt4opdc4fl2ap.jpg);
     }
     50% {
         background-image: url(./images/blood-aesthetic-oxvmt4opdc4fl2ap.jpg);
         background-position: center;
-        transform: scale(1); /* Keep skew at 10deg */
-        opacity: 0.7; /* Fade in as it grows */
+        transform: scale(1);
+        opacity: 0.7;
     }
     100% {
-        fill: #640404; /* Final blood color */
+        fill: #640404;
         background-image: url(./images/blood-aesthetic-oxvmt4opdc4fl2ap.jpg);
-        transform:scale(1); /* Final state with skew still at 10deg */
+        transform:scale(1);
         background-position: center;
-        opacity: 1; /* Fully visible */
+        opacity: 1;
     }
-}
+} */
 
 .part-one {
     height: 100dvh;
@@ -116,3 +132,9 @@ body {
     padding: 1rem 1rem;
     flex-direction: column;
 }
+
+.one-heading1 {
+    display: flex;
+    justify-content: center;
+}
+
