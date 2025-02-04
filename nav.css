@@ -18,6 +18,7 @@
 #theme-switcher:hover,
 #theme-switcher:active {
     background-color: var(--contrasting-text-color);
+    border-radius: 50%;
 }
 
 body.darkmode #theme-switcher:hover {
@@ -89,7 +90,6 @@ body.darkmode #theme-switcher:hover svg {
 
 header {
     position: absolute;
-    
     top: 0;
     z-index: 1000;
     width: 100%;
