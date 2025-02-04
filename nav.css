@@ -18,7 +18,6 @@
 #theme-switcher:hover,
 #theme-switcher:active {
     background-color: var(--contrasting-text-color);
-    border-radius: 50%;
 }
 
 body.darkmode #theme-switcher:hover {
@@ -51,17 +50,6 @@ body.darkmode #theme-switcher:hover svg {
   outline: none;
 }
 
-  a:hover,
-  button:hover,
-  input:hover,
-  select:hover,
-  textarea:hover,
-  svg:hover{
-    background-color: inherit; /* Reset background color */
-    color: inherit; /* Reset text color */
-    cursor: default; /* Reset cursor */
-  }
-
 #theme-switcher.no-hover:hover {
     background-color: var(--active-color); /* Reset to normal state */
     fill: var(--contrasting-text-color);
@@ -90,6 +78,7 @@ body.darkmode #theme-switcher:hover svg {
 
 header {
     position: absolute;
+    
     top: 0;
     z-index: 1000;
     width: 100%;
@@ -332,11 +321,6 @@ body.darkmode .navbar li svg {
     body.darkmode #theme-switcher:hover {
         background-color: var(--base-color);
     }
-
-      a, button, input, select, textarea {
-  outline: none; /* Remove the blue outline */
-  -webkit-tap-highlight-color: transparent; /* Disable tap highlight on mobile devices */
-}
     
     #theme-switcher svg {
         height: 3vh;
