@@ -1,0 +1,167 @@
+[
+  {
+    "State": "Uttar Pradesh",
+    "Sum of Total Assaults": 529734,
+    "ID": "INUP"
+  },
+  {
+    "State": "Andhra Pradesh",
+    "Sum of Total Assaults": 478244,
+    "ID": "INAP"
+  },
+  {
+    "State": "Madhya Pradesh",
+    "Sum of Total Assaults": 413157,
+    "ID": "INMP"
+  },
+  {
+    "State": "West Bengal",
+    "Sum of Total Assaults": 409242,
+    "ID": "INWB"
+  },
+  {
+    "State": "Rajasthan",
+    "Sum of Total Assaults": 379264,
+    "ID": "INRJ"
+  },
+  {
+    "State": "Maharashtra",
+    "Sum of Total Assaults": 365632,
+    "ID": "INMH"
+  },
+  {
+    "State": "Assam",
+    "Sum of Total Assaults": 291980,
+    "ID": "INAS"
+  },
+  {
+    "State": "Kerala",
+    "Sum of Total Assaults": 202986,
+    "ID": "INKL"
+  },
+  {
+    "State": "Orissa",
+    "Sum of Total Assaults": 194774,
+    "ID": "INOR"
+  },
+  {
+    "State": "Bihar",
+    "Sum of Total Assaults": 189886,
+    "ID": "INBR"
+  },
+  {
+    "State": "Karnataka",
+    "Sum of Total Assaults": 161364,
+    "ID": "INKA"
+  },
+  {
+    "State": "Gujarat",
+    "Sum of Total Assaults": 154339,
+    "ID": "INGJ"
+  },
+  {
+    "State": "Haryana",
+    "Sum of Total Assaults": 152479,
+    "ID": "INHR"
+  },
+  {
+    "State": "Punjab",
+    "Sum of Total Assaults": 135575,
+    "ID": "INPB"
+  },
+  {
+    "State": "Tamil Nadu",
+    "Sum of Total Assaults": 133884,
+    "ID": "INTN"
+  },
+  {
+    "State": "Delhi",
+    "Sum of Total Assaults": 104729,
+    "ID": "INDL"
+  },
+  {
+    "State": "Tripura",
+    "Sum of Total Assaults": 102185,
+    "ID": "INTR"
+  },
+  {
+    "State": "Chhattisgarh",
+    "Sum of Total Assaults": 97687,
+    "ID": "INCT"
+  },
+  {
+    "State": "Uttaranchal",
+    "Sum of Total Assaults": 88036,
+    "ID": "INUT"
+  },
+  {
+    "State": "Jharkhand",
+    "Sum of Total Assaults": 82827,
+    "ID": "INJH"
+  },
+  {
+    "State": "Jammu and Kashmir",
+    "Sum of Total Assaults": 60171,
+    "ID": "INJK"
+  },
+  {
+    "State": "Nagaland",
+    "Sum of Total Assaults": 50593,
+    "ID": "INNL"
+  },
+  {
+    "State": "Himachal Pradesh",
+    "Sum of Total Assaults": 22957,
+    "ID": "INHP"
+  },
+  {
+    "State": "Sikkim",
+    "Sum of Total Assaults": 7454,
+    "ID": "INSK"
+  },
+  {
+    "State": "Dadra and Nagar Haveli and Daman and Diu",
+    "Sum of Total Assaults": 28940,
+    "ID": "INDH"
+  },
+  {
+    "State": "Chandigarh",
+    "Sum of Total Assaults": 5341,
+    "ID": "INCH"
+  },
+  {
+    "State": "Arunachal Pradesh",
+    "Sum of Total Assaults": 4822,
+    "ID": "INAR"
+  },
+  {
+    "State": "Manipur",
+    "Sum of Total Assaults": 4390,
+    "ID": "INMN"
+  },
+  {
+    "State": "Meghalaya",
+    "Sum of Total Assaults": 4294,
+    "ID": "INML"
+  },
+  {
+    "State": "Goa",
+    "Sum of Total Assaults": 4179,
+    "ID": "INGA"
+  },
+  {
+    "State": "Mizoram",
+    "Sum of Total Assaults": 2844,
+    "ID": "INMZ"
+  },
+  {
+    "State": "Andaman and Nicobar",
+    "Sum of Total Assaults": 1868,
+    "ID": "INAN"
+  },
+  {
+    "State": "Puducherry",
+    "Sum of Total Assaults": 1793,
+    "ID": "INPY"
+  }
+]
