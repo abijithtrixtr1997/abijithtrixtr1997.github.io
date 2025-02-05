@@ -11,6 +11,11 @@
     margin: 0;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
 body {
     background-color: var(--base-color);
     background-repeat: no-repeat;
@@ -82,49 +87,44 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    height: 100%;
-    width: 85rem;
+    height: 100vh;
+    width: 100%;
     padding: 0;
     margin: 0;
+    overflow: hidden;
 }
 
-@keyframes shapebg {
-    0% {
-        background-color: var(--base-color);
-    }
-    100% {
-        background-color: var(--accent-color);
-    }
-}
-
+/* Use aspect-ratio property for circle */
 .circle {
     content: '';
     position: absolute;
-    height: 100%;
-    width: 100%;
+    aspect-ratio: 1;
+    width: 100vh;
     border-radius: 50%;
-    transform: translateX(50%);
-    border: 10rem solid var(--active-color);
+    transform: translateX(calc(100dvw/2));
+    box-sizing: border-box;
+    border: clamp(2rem, 10vh, 10rem) solid var(--active-color);
     animation: borderincrease 1.5s ease-in;
 }
 
 @keyframes borderincrease {
     0% {
-        border: 1rem solid var(--accent-color);
+        border: clamp(0.5rem, 1vw, 1rem) solid var(--accent-color);
     }
     100% {
-        border: 10rem solid var(--active-color);
+        border: clamp(2rem, 10vh, 10rem) solid var(--active-color);
     }
 }
 
+/* Use viewport-relative units and aspect-ratio for lines */
 .hline {
     content: '';
     position: absolute;
     top: 50%;
-    left: 0;
-    height: 10rem;
+    box-sizing: border-box;
+    height: clamp(2rem, 10vh, 10rem);
+    width: clamp(30%, 55dvw, 60%);
     background-color: var(--active-color);
-    width: 60%;
     transform: translateY(-50%);
     animation: hshapebg 1.5s ease-in;
 }
@@ -132,13 +132,12 @@ body {
 @keyframes hshapebg {
     0% {
         background-color: var(--accent-color);
-        height: 1rem;
+        height: clamp(0.5rem, 1vh, 1rem);
         width: 10%;
     }
-
     100% {
-        height: 10rem;
-        width: 60%;
+        height: clamp(2rem, 10vh, 10rem);
+        width: clamp(30%, 55dvw, 60%);
         background-color: var(--active-color);
     }
 }
@@ -146,25 +145,50 @@ body {
 .vline {
     content: '';
     position: absolute;
-    background-color: var(--active-color);
     height: 50%;
-    width: 10rem;
+    width: clamp(2rem, 10vh, 10rem);
+    background-color: var(--active-color);
     transform: translateX(100%) translateY(50%);
     animation: vshapebg 1.5s ease-in;
 }
 
 @keyframes vshapebg {
     0% {
-        width: 1rem;
+        width: clamp(0.5rem, 1vw, 1rem);
         height: 50%;
         background-color: var(--accent-color);
     }
-
     100% {
-        width: 10rem;
+        width: clamp(2rem, 10vh, 10rem);
         height: 50%;
         background-color: var(--active-color);
     }
+}
+
+/* Mobile adjustments while maintaining proportions */
+@media (max-width: 500px) {
+    .circle {
+        width: 100vw;
+        transform: translateY(25%) translateX(25%);
+    }
+    
+    .hline {
+        left: 0;
+        height: clamp(1rem, 3vh, 2rem);
+        width: 60%;
+    }
+    
+    .vline {
+        top: 25%;
+        left: 10%;
+        height: 25vh;
+        width: clamp(1rem, 3vw, 2rem);
+        transform: none;
+    }
+}
+
+.content {
+    background-color: var(--base-color);
 }
 
 .container {
@@ -493,4 +517,135 @@ canvas svg {
 .test-container h1 {
     position: absolute;
     top: 0;
+}
+
+.svg-map-selector {
+    display: flex;
+    height: 100dvh;
+    width: 100dvw;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 1rem;
+    margin-top: 1rem;
+    background: radial-gradient(circle at center, #95948f, #f0f0f0, var(--base-color));
+}
+
+.india-map {
+    height: 90dvh;
+    width: auto;
+    z-index: 2;
+    filter: drop-shadow(2px 2px 4px #333333);
+    opacity: 0; /* Initially hidden */
+    transform: translateY(50px); /* Initially off-screen */
+}
+
+.india-map.visible {
+    animation: appear 2s ease-out forwards; /* Trigger animation when visible */
+}
+
+@keyframes appear {
+    0% {
+      opacity: 0;
+      transform: translateY(50px); /* Initial state: off-screen and hidden */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* Final state: fully visible */
+    }
+  }
+  
+.svg-container {
+    z-index: 5;
+}
+
+.india-map path:hover {
+    fill: #640404;
+    stroke: #A07272;
+}
+
+.tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    padding: 5px;
+    border-radius: 3px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.1s ease;
+    font-size: 14px;
+}
+
+.population-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--light-blue), #e0f2fe);
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    padding: 2rem;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 1rem;
+    grid-row: 1/2;
+}
+
+.title h1 {
+    color: var(--primary-blue);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.insights-grid {
+    margin-bottom: 1vh;
+    height: 100%;
+}
+
+.insight-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.insight-card h2 {
+    color: var(--primary-blue);
+    border-bottom: 2px solid var(--light-blue);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.growth-breakdown {
+    background-color: #f0f9ff;
+    padding: 0.75rem;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.fact-container {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .insights-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.container3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100dvh;
+    width: 100dvw;
+    gap: 3vh;
+    flex-direction: column;
 }
