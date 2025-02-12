@@ -1,0 +1,138 @@
+[
+  {
+    "State": "Uttar Pradesh",
+    "ID": "INUP"
+  },
+  {
+    "State": "Andhra Pradesh",
+    "ID": "INAP"
+  },
+  {
+    "State": "Madhya Pradesh",
+    "ID": "INMP"
+  },
+  {
+    "State": "West Bengal",
+    "ID": "INWB"
+  },
+  {
+    "State": "Rajasthan",
+    "ID": "INRJ"
+  },
+  {
+    "State": "Maharashtra",
+    "ID": "INMH"
+  },
+  {
+    "State": "Assam",
+    "ID": "INAS"
+  },
+  {
+    "State": "Kerala",
+    "ID": "INKL"
+  },
+  {
+    "State": "Orissa",
+    "ID": "INOR"
+  },
+  {
+    "State": "Bihar",
+    "ID": "INBR"
+  },
+  {
+    "State": "Karnataka",
+    "ID": "INKA"
+  },
+  {
+    "State": "Gujarat",
+    "ID": "INGJ"
+  },
+  {
+    "State": "Haryana",
+    "ID": "INHR"
+  },
+  {
+    "State": "Punjab",
+    "ID": "INPJ"
+  },
+  {
+    "State": "Tamil Nadu",
+    "ID": "INTN"
+  },
+  {
+    "State": "Delhi",
+    "ID": "INDL"
+  },
+  {
+    "State": "Tripura",
+    "ID": "INTR"
+  },
+  {
+    "State": "Chhattisgarh",
+    "ID": "INCT"
+  },
+  {
+    "State": "Uttaranchal",
+    "ID": "INUT"
+  },
+  {
+    "State": "Jharkhand",
+    "ID": "INJH"
+  },
+  {
+    "State": "Jammu and Kashmir",
+    "ID": "INJK"
+  },
+  {
+    "State": "Nagaland",
+    "ID": "INNL"
+  },
+  {
+    "State": "Himachal Pradesh",
+    "ID": "INHP"
+  },
+  {
+    "State": "Dadra and Nagar Haveli",
+    "ID": "INDH"
+  },
+  {
+    "State": "Sikkim",
+    "ID": "INSK"
+  },
+  {
+    "State": "Daman and Diu",
+    "ID": "INDH"
+  },
+  {
+    "State": "Chandigarh",
+    "ID": "INCH"
+  },
+  {
+    "State": "Arunachal Pradesh",
+    "ID": "INAP"
+  },
+  {
+    "State": "Manipur",
+    "ID": "INMN"
+  },
+  {
+    "State": "Meghalaya",
+    "ID": "INML"
+  },
+  {
+    "State": "Goa",
+    "ID": "INGA"
+  },
+  {
+    "State": "Mizoram",
+    "ID": "INMZ"
+  },
+  {
+    "State": "Andaman and Nicobar",
+    "ID": "INAN"
+  },
+  {
+    "State": "Puducherry",
+    "ID": "INPY"
+  }
+]
