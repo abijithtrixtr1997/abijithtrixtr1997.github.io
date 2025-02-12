@@ -314,19 +314,6 @@ updateSVGFill();
 //   path.addEventListener('mouseleave', hideTooltip);
 // });
 
-document.querySelectorAll(".growth-breakdown").forEach((item) => {
-  item.addEventListener("mouseover", () => {
-    item.style.backgroundColor = "#e0f2fe";
-    item.style.transform = "scale(1.02)";
-    item.style.transition = "all 0.3s ease";
-  });
-
-  item.addEventListener("mouseout", () => {
-    item.style.backgroundColor = "#f0f9ff";
-    item.style.transform = "scale(1)";
-  });
-});
-
 console.log(populationdatadata);
 
 const population2001 = populationdatadata.map(
@@ -401,6 +388,8 @@ const statewisedata = statewisedata_1.filter((item) => item.Year < 2020);
 
 console.log(stateiddata);
 console.log(statewisedata);
+const uniqueIDs = [...new Set(statewisedata.map((item) => item.ID))];
+console.log(uniqueIDs);
 
 const drawyearlyassaults = (smalldata) => {
   const ctx_1 = document.getElementById("yearly-assaults");
