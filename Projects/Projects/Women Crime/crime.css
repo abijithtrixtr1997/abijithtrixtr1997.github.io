@@ -147,6 +147,10 @@ body {
   overflow: hidden;
 }
 
+/* #assaultratio {
+  
+} */
+
 .circle {
   content: "";
   position: absolute;
@@ -502,6 +506,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 1.5rem;
 }
 
 .head-para-group canvas {
@@ -717,7 +722,7 @@ canvas svg {
 .insights-text {
   display: flex;
   flex-direction: column;
-  gap: 1dvh;
+  gap: 2rem;
   align-items: center;
   justify-content: center;
 }
@@ -910,16 +915,24 @@ li a {
 .bottomGraph {
   width: 100%;
   height: 100%;
-  flex: 0 0 50%;
+  flex: 0 0 40%;
   background-color: var(--accent-color);
   align-items: center;
-  gap: 5dvh;
+  gap: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   border-radius: 12px;
-  padding: 1dvh 1dvw;
+  padding: 1rem;
   box-shadow: var(--box-shadow);
+}
+
+#yearly-assaults {
+  width: 100%;
+  height: 100%; /* Adjusts to parent container */
+  max-width: 100%;
+  max-height: 30dvh;
+  box-sizing: border-box;
 }
 
 .bottomGraph h1 {
