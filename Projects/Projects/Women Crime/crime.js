@@ -58,7 +58,7 @@ const increase1 = assault1.map((val, index) => assault2[index] - val);
 const increase2 = assault2.map((val, index) => assault3[index] - val);
 
 const ctx = document.getElementById("assaultratio");
-ctx.style.height = "50dvh";
+ctx.style.height = "80dvh";
 const myChart = new Chart(ctx, {
   type: "bar",
   data: {
@@ -394,6 +394,7 @@ console.log(uniqueIDs);
 const drawyearlyassaults = (smalldata) => {
   const ctx_1 = document.getElementById("yearly-assaults");
   const years = smalldata.map((item) => item.Year);
+
   const numbers = smalldata.map((item) => item["Sum of Total Assaults"]);
   const myChart1 = new Chart(ctx_1, {
     data: {
