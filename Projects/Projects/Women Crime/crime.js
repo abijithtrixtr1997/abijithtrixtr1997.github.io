@@ -5,8 +5,7 @@ async function loadChartData() {
   const states = data.map((item) => item.State);
   const assaults = data.map((item) => item["Sum of Total Assaults"]);
 
-  const ctx = document.getElementById("mychart");
-  ctx.style.height = "50dvh";
+  const ctx = document.getElementById("mychart").getContext("2d");
   const myChart = new Chart(ctx, {
     type: "bar",
     data: {
@@ -15,20 +14,22 @@ async function loadChartData() {
         {
           label: "Number of Assaults",
           data: assaults,
-          backgroundColor: "rgb(121, 128, 128, 0.5)",
-          borderColor: "rgb(121, 128, 128, 1)",
+          backgroundColor: "rgba(121, 128, 128, 0.5)", // Use rgba() properly
+          borderColor: "rgba(121, 128, 128, 1)",
           borderWidth: 1,
         },
       ],
     },
     options: {
       indexAxis: "y",
-      responsive: true,
+      responsive: true, // Ensures responsiveness
+      maintainAspectRatio: true, // Allows dynamic height
       scales: {
         x: {
           ticks: {
             rotation: 0,
             align: "center",
+            font: { size: 10 }, // Use a number (px) instead of 1
           },
         },
         y: {
@@ -82,6 +83,7 @@ const myChart = new Chart(ctx, {
   },
   options: {
     indexAxis: "y",
+    maintainAspectRatio: true, // Allows dynamic height
     responsive: true,
     scales: {
       x: {
@@ -144,6 +146,7 @@ const myChart1 = new Chart(ctx1, {
   },
   options: {
     responsive: true,
+    maintainAspectRatio: true, // Allows dynamic height
     scales: {
       x: {
         stacked: true,
@@ -333,7 +336,7 @@ console.log(population2011);
 console.log(population2021);
 
 popctx.style.height = "50dvh";
-popctx.style.width = "100%";
+popctx.style.width = "90%";
 const populationChart = new Chart(popctx, {
   type: "line",
   data: {
@@ -364,6 +367,7 @@ const populationChart = new Chart(popctx, {
   },
   options: {
     responsive: true,
+    maintainAspectRatio: true, // Allows dynamic height
     scales: {
       x: {
         stacked: true,
@@ -411,6 +415,7 @@ const drawyearlyassaults = (smalldata) => {
     },
     options: {
       responsive: true,
+      maintainAspectRatio: true, // Allows dynamic height
       scales: {
         x: {
           stacked: false,
@@ -437,7 +442,11 @@ const drawtypevsyear = (smalldata) => {
   const trafficking = smalldata.map((item) => item["Sum of Trafficking"]);
   const dowry = smalldata.map((item) => item["Sum of Dowry Deaths"]);
   ctx_2.style.height = "auto";
-  ctx_2.style.maxWidth = "90%";
+  if (window.innerWidth > 500) {
+    ctx_2.style.maxWidth = "90%";
+  } else {
+    ctx_2.style.maxWidth = "100%";
+  }
   const myChart1 = new Chart(ctx_2, {
     type: "line",
     data: {
@@ -505,6 +514,13 @@ const drawtypevsyear = (smalldata) => {
   });
 };
 
+function deleteContainer() {
+  const elementToRemove = document.getElementById("to-remove");
+  if (elementToRemove) {
+    elementToRemove.remove(); // Removes the div with id "to-remove"
+  }
+}
+
 stateiddata.forEach((item) => {
   const svgPath = document.getElementById(item.ID);
   if (svgPath) {
@@ -562,9 +578,12 @@ stateiddata.forEach((item) => {
       console.log(totalModesty);
       console.log(totalDowry);
       console.log(totalTrafficking);
-      inDiv.innerHTML = `
+
+      if (window.innerWidth > 500) {
+        inDiv.innerHTML = `
         <div class="indiv">
           <h1>${item.State}</h1>
+          <button class="indiv-button">X</button>
         </div>
         <div class="graphs-inside">
           <div class="leftGraphs">
@@ -619,8 +638,75 @@ stateiddata.forEach((item) => {
           </div>
         </div>
       `;
+      } else {
+        inDiv.innerHTML = `
+        <div class="indiv">
+          <h1>${item.State}</h1>
+          <button class="indiv-button">X</button>
+        </div>
+        <div class="graphs-inside">
+          <div class="topGraphs">
+            <div class="topLeftTable">
+              <h2 class="statistics-title">Crime Statistics Report</h2>
+              <table class="statistics-table">
+                <tr>
+                  <th>Type</th>
+                  <th>Count</th>
+                </tr>
+                <tr>
+                  <td>Domestic Violence</td>
+                  <td>${totalDomesticViolence}</td>
+                </tr>
+                <tr>
+                  <td>Kidnap and Assault</td>
+                  <td>${totalKidnap}</td>
+                </tr>
+                <tr>
+                  <td>Rape</td>
+                  <td>${totalRape}</td>
+                </tr>
+                <tr>
+                  <td>Assault on Modesty</td>
+                  <td>${totalModesty}</td>
+                </tr>
+                <tr>
+                  <td>Dowry Deaths</td>
+                  <td>${totalDowry}</td>
+                </tr>
+                <tr>
+                  <td>Trafficking</td>
+                  <td>${totalTrafficking}</td>
+                </tr>
+              </table>
+            </div>
+            <div class="topTotalAssaults">
+              <h1><span class="headingAssaults">Total Assaults</span> <br>${totalAssaults}</h1>
+            </div>
+          </div>
+          <div class="bottomGraphs">
+            <div class="bottomGraph">
+              <h1>Assaults per Year</h1>
+              <canvas id="yearly-assaults"></canvas>
+            </div>
+            <div class="right-graph-container">
+              <h1>Assaults by Category</h1>
+              <canvas id="category-assaults"></canvas>
+            </div>
+          </div>
+        </div>`;
+      }
       drawyearlyassaults(smalldata);
       drawtypevsyear(smalldata);
+      const inDivbutton = document.querySelector(".indiv-button");
+      if (inDivbutton) {
+        console.log(inDivbutton);
+        inDivbutton.addEventListener("click", function () {
+          const elementToRemove = document.getElementById("to-remove");
+          if (elementToRemove) {
+            elementToRemove.remove();
+          }
+        });
+      }
     });
   }
 });
