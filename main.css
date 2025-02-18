@@ -7,6 +7,7 @@
     0 -4px 5px rgba(6, 24, 16, 0.6);
   --accent-color: #718355;
   --active-color: #cfe1b9;
+  --light-bg: #374724;
   --contrasting-text-color: #97a97c;
   --placeholder-color: #718355;
 }
@@ -18,6 +19,7 @@ body.darkmode {
   --box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.1),
     -8px -8px 10px rgba(0, 0, 0, 0.1);
   --accent-color: #4f4557;
+  --light-bg: #6d5d6e;
   --active-color: #6d5d6e;
   --contrasting-text-color: #2f3e46;
   --placeholder-color: #dbddeca1;
@@ -34,6 +36,33 @@ body {
 
 body::-webkit-scrollbar {
   display: none; /* For Chrome, Safari, and Opera */
+}
+
+.about-description button {
+  margin-top: 1rem;
+  padding: 1rem 1rem;
+  font-size: 1rem;
+  background-color: var(--accent-color);
+  color: var(--base-color);
+  border: none;
+  box-shadow: var(--box-shadow);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s ease;
+  font-family: "Bebas Neue", sans-serif;
+}
+
+body.darkmode .project-container,
+button:hover {
+  background-color: var(--active-color);
+  color: var(--base-color);
+  transition: background-color 0.3s, color 0.3s ease;
+}
+
+.about-description button:hover {
+  background-color: var(--active-color);
+  color: var(--placeholder-color);
+  transition: background-color 0.3s, color 0.3s ease;
 }
 
 body {
@@ -203,7 +232,6 @@ body.darkmode .right-container {
   display: flex;
   flex-direction: column;
   scroll-snap-align: center;
-
   height: 100%;
   padding: 20px;
   margin: 20px;
@@ -248,8 +276,11 @@ body.darkmode .right-container {
 }
 
 .Masters,
-.Bachelors {
-  background-color: var(--active-color);
+.Bachelors,
+.inner-experience,
+.project-description,
+.about-description .group-text {
+  background-color: var(--light-bg);
   border-radius: 10px;
   padding: 1rem 1rem;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
@@ -480,6 +511,7 @@ body.darkmode .connect-form button:hover {
 
 @media (max-width: 600px) {
   .about-pagefull {
+    width: 95%;
     height: auto;
     margin: 0;
     padding: 0;
@@ -498,6 +530,102 @@ body.darkmode .connect-form button:hover {
     font-size: 2.5vw;
   }
 
+  .about-container {
+    width: 90%;
+    padding: 0 0;
+    margin: 0 0;
+  }
+
+  .about-container p {
+    font-size: 0.8rem;
+  }
+
+  .about-description,
+  .experience-container,
+  .education-container,
+  .project-container {
+    padding: 0 0;
+    margin: 0 0;
+  }
+
+  .right-container {
+    padding: 1rem 1rem;
+    min-width: 100%;
+    min-height: 100%;
+  }
+
+  .education-container h1,
+  .experience-container h1,
+  .project-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .Masters h2,
+  .Bachelors h2 {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  .Masters p,
+  .Bachelors p,
+  .experience-container p,
+  .project-container p {
+    font-size: 0.6rem;
+  }
+
+  .project-description {
+    margin-bottom: 2rem;
+  }
+
+  .connect-container {
+    max-width: 95%;
+    padding: 0;
+    margin: 0 0;
+    margin-top: 3rem;
+  }
+
+  .connect-inside {
+    width: 98%;
+    padding: 0 0;
+    margin: 0 0;
+  }
+
+  .connect-inner-inside {
+    padding: 1rem 1rem;
+    width: 90%;
+  }
+
+  .connect-inner-inside h3 {
+    font-size: 1.5rem;
+  }
+
+  .connect-form label {
+    font-size: 1rem;
+  }
+
+  #connect-message {
+    font-size: 1rem; /* Input text size */
+    padding: 1rem 1rem;
+    border-radius: 4px;
+    width: 90%;
+    height: auto;
+  }
+
+  .connect-form button {
+    width: 40%;
+    padding: 1rem 1rem;
+    font-size: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  #connect-message::placeholder {
+    font-size: 1rem; /* Placeholder text size */
+    color: gray; /* Optional: Change placeholder color */
+  }
+
+  .connect-container {
+    margin-bottom: 1rem;
+  }
   .connect-form input[type="text"]::placeholder {
     font-size: 2.5vw; /* Change placeholder font size */
     opacity: 1; /* Make sure the placeholder is not faded */
@@ -508,10 +636,6 @@ body.darkmode .connect-form button:hover {
     font-size: 2.5vw; /* Change placeholder font size */
     opacity: 1; /* Make sure the placeholder is not faded */
     font-family: "Incnsolata", monospace;
-  }
-
-  .connect-form button {
-    font-size: 2.5dvw;
   }
 }
 
