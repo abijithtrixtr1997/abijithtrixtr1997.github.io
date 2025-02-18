@@ -52,8 +52,7 @@ body::-webkit-scrollbar {
   font-family: "Bebas Neue", sans-serif;
 }
 
-body.darkmode .project-container,
-button:hover {
+body.darkmode .project-container button:hover {
   background-color: var(--active-color);
   color: var(--base-color);
   transition: background-color 0.3s, color 0.3s ease;
@@ -62,6 +61,18 @@ button:hover {
 .about-description button:hover {
   background-color: var(--active-color);
   color: var(--placeholder-color);
+  transition: background-color 0.3s, color 0.3s ease;
+}
+
+body.darkmode .about-description button {
+  background-color: var(--base-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s ease;
+}
+
+body.darkmode .about-description button:hover {
+  background-color: var(--active-color);
+  color: var(--base-color);
   transition: background-color 0.3s, color 0.3s ease;
 }
 
