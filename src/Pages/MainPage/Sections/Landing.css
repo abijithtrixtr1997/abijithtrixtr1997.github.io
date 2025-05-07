@@ -1,0 +1,35 @@
+.total-top-text {
+  animation: name-animate 1s ease-in-out;
+}
+
+@keyframes name-animate {
+  0% {
+    opacity: 0;
+  }
+  
+  100% {
+    opacity: 1;
+  }
+}
+
+.total-top-text::before {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(#8b5cf6, #d946ef);
+  animation: underline-animation 1s ease-in-out;
+}
+
+@keyframes underline-animation {
+  0% {
+    width: 0;
+  }
+  
+  100% {
+    width: 100%;
+  }
+}
+

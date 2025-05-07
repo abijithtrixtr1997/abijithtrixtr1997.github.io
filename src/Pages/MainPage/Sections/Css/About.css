@@ -1,0 +1,12 @@
+.ML {
+  background: linear-gradient(to right, #00f0ff, #a335ff, #ff6b00);
+}
+
+.skill-pill {
+  box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.2),
+    -2px -2px 4px rgba(255, 255, 255, 0.2);
+}
+
+.ML-inner {
+  background-color: solid #1a1a1a !important;
+}

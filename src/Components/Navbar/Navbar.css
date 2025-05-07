@@ -1,0 +1,27 @@
+.dark-button, .light-button {
+  position: absolute;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.dark-button.inactive {
+  transform: translateX(150%);
+  opacity: 0;
+}
+
+.dark-button.active {
+  transform: translateX(0%);
+}
+
+.light-button.inactive {
+  transform: translateX(-150%);
+  opacity: 0;
+}
+
+.light-button.active {
+  transform: translateX(0%);
+}
+
+.theme-switcher svg {
+  color: white;
+  fill: white;
+}
